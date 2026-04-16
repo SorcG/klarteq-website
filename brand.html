@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Klarteq &ndash; Brand Guidelines (Final)</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pri:#374151;--acc:#5B8C6F;--bg:#F9FAFB;--dark:#111827;
+  --acc-hover:#4a7a5e;--acc-light:rgba(91,140,111,.08);
+  --border:#E5E7EB;--muted:#6B7280;--surface:#fff;
+  --dbg:#0e1117;--ds:#161b22;--db:#2a3140;
+  --dt:#e6edf3;--dd:#8b949e;--dm:#5a6370;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--dbg);color:var(--dt);font-family:'DM Sans',sans-serif;line-height:1.6}
+
+.hero{padding:64px 24px 44px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(91,140,111,.1),transparent 70%);pointer-events:none}
+.badge{display:inline-block;padding:5px 14px;background:rgba(91,140,111,.12);border:1px solid rgba(91,140,111,.25);border-radius:20px;font-size:11px;font-weight:600;color:var(--acc);margin-bottom:18px;letter-spacing:.6px;text-transform:uppercase}
+h1{font-family:'Manrope',sans-serif;font-size:clamp(28px,5vw,46px);font-weight:800;letter-spacing:-1.5px;margin-bottom:10px;background:linear-gradient(135deg,#e6edf3 30%,#8b949e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero>p{color:var(--dd);font-size:15px;max-width:540px;margin:0 auto}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px 80px}
+.sec{font-size:13px;font-weight:700;color:var(--acc);text-transform:uppercase;letter-spacing:1.2px;margin:56px 0 8px}
+.sec-title{font-family:'Sora',sans-serif;font-size:clamp(22px,3.5vw,32px);font-weight:800;letter-spacing:-.8px;margin-bottom:10px}
+.sec-sub{color:var(--dd);font-size:14px;margin-bottom:28px;max-width:600px}
+.card{background:var(--ds);border:1px solid var(--db);border-radius:14px;padding:28px 24px;margin-bottom:20px}
+.card p{font-size:13px;color:var(--dd);line-height:1.7}
+.card strong{color:var(--dt)}
+
+/* Wordmark helpers */
+.wm{display:inline;line-height:1;white-space:nowrap}
+.dot{display:inline-block;border-radius:50%;background:var(--acc);vertical-align:top}
+
+/* Logo showcase */
+.logo-show{display:flex;border-radius:14px;overflow:hidden;margin-bottom:20px}
+.ls-half{flex:1;padding:48px 32px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
+.ls-light{background:#fff;border:1px solid var(--border);border-right:none;border-radius:14px 0 0 14px}
+.ls-dark{background:var(--dark);border-radius:0 14px 14px 0}
+@media(max-width:560px){.logo-show{flex-direction:column}.ls-light{border-right:1px solid var(--border);border-radius:14px 14px 0 0}.ls-dark{border-radius:0 0 14px 14px}}
+.ls-label{font-size:9px;text-transform:uppercase;letter-spacing:.8px;font-weight:600}
+
+.logo-sizes{display:flex;gap:32px;align-items:flex-end;flex-wrap:wrap;padding:16px 0 20px}
+.sz{text-align:center}
+.sz-label{font-size:9px;color:var(--dm);text-transform:uppercase;letter-spacing:.5px;margin-top:6px}
+.fav-box{width:36px;height:36px;border-radius:10px;background:var(--pri);display:flex;align-items:center;justify-content:center;position:relative;margin:0 auto}
+.fav-box span{font-family:'Manrope';font-weight:800;font-size:22px;color:#fff}
+.fav-dot{position:absolute;top:3px;right:3px;width:7px;height:7px;border-radius:50%;background:var(--acc)}
+
+/* Logo rules */
+.logo-rules{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+@media(max-width:640px){.logo-rules{grid-template-columns:1fr}}
+.lr{background:var(--ds);border:1px solid var(--db);border-radius:10px;padding:16px;text-align:center}
+.lr-demo{height:56px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;border-radius:8px}
+.lr-label{font-size:10px;text-transform:uppercase;letter-spacing:.6px;font-weight:600}
+.lr-label.yes{color:var(--acc)}
+.lr-label.no{color:#E8685A}
+
+/* Colors */
+.color-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+@media(max-width:560px){.color-grid{grid-template-columns:repeat(2,1fr)}}
+.cc{border-radius:12px;overflow:hidden;cursor:pointer;transition:transform .2s}
+.cc:hover{transform:translateY(-3px)}
+.cc-sw{height:80px;display:flex;align-items:center;justify-content:center}
+.cc-sw span{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;opacity:.85;text-shadow:0 1px 3px rgba(0,0,0,.3)}
+.cc-meta{background:#1c2230;padding:10px 12px}
+.cc-name{font-size:12px;font-weight:600;margin-bottom:2px}
+.cc-use{font-size:10px;color:var(--dm)}
+
+/* Font cards */
+.ftc{background:var(--ds);border:1px solid var(--db);border-radius:14px;padding:24px;margin-bottom:16px;display:flex;gap:24px;align-items:flex-start}
+@media(max-width:560px){.ftc{flex-direction:column}}
+.ft-info{flex:0 0 180px}
+.ft-label{font-size:10px;text-transform:uppercase;letter-spacing:.8px;color:var(--dm);margin-bottom:4px}
+.ft-name{font-size:18px;font-weight:700;margin-bottom:4px}
+.ft-w{font-size:11px;color:var(--dm)}
+.ft-prev{flex:1;min-width:0}
+
+/* Live preview */
+.lp{border-radius:14px;overflow:hidden;border:1px solid var(--db);margin:24px 0}
+.lp-nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:var(--surface);border-bottom:1px solid var(--border)}
+.lp-links{display:flex;gap:20px;font-family:'Sora',sans-serif;font-size:13px;color:var(--muted);font-weight:500}
+.lp-hero{background:var(--bg);padding:48px 24px 52px;position:relative;overflow:hidden}
+.lp-hero::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:rgba(91,140,111,.06);pointer-events:none}
+.lp-kicker{font-family:'Sora';font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--acc);margin-bottom:12px}
+.lp-h{font-family:'Sora';font-size:clamp(24px,4vw,36px);font-weight:800;color:var(--dark);letter-spacing:-1px;line-height:1.15;margin-bottom:14px;max-width:520px}
+.lp-sub{font-family:'Source Serif 4',serif;font-size:15px;color:var(--muted);line-height:1.65;max-width:440px;margin-bottom:20px}
+.lp-btns{display:flex;gap:12px;flex-wrap:wrap}
+.lp-btn1{font-family:'Sora';padding:11px 28px;background:var(--acc);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+.lp-btn1:hover{background:var(--acc-hover)}
+.lp-btn2{font-family:'Sora';padding:11px 28px;background:transparent;color:var(--pri);border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s}
+.lp-btn2:hover{border-color:var(--acc);color:var(--acc)}
+.lp-trust{background:var(--surface);padding:20px 24px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;border-top:1px solid var(--border)}
+.lp-ti{display:flex;align-items:center;gap:8px}
+.lp-ti-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;background:var(--acc-light);color:var(--acc)}
+.lp-ti-text{font-family:'Sora';font-size:12px;color:var(--muted)}
+.lp-ti-text strong{color:var(--dark);font-weight:600}
+@media(max-width:560px){.lp-links{display:none}.lp-trust{flex-direction:column;align-items:flex-start;gap:12px}}
+
+/* Rules */
+.rg{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:600px){.rg{grid-template-columns:1fr}}
+.rule{background:var(--ds);border:1px solid var(--db);border-radius:12px;padding:20px}
+.rule h4{font-size:11px;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px;font-weight:600}
+.rule.do h4{color:var(--acc)}
+.rule.dont h4{color:#E8685A}
+.rule li{font-size:13px;color:var(--dd);margin-bottom:6px;line-height:1.5;list-style:none;padding-left:18px;position:relative}
+.rule.do li::before{content:'\2713';position:absolute;left:0;color:var(--acc);font-weight:700}
+.rule.dont li::before{content:'\2717';position:absolute;left:0;color:#E8685A;font-weight:700}
+
+.adj-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 24px}
+.adj{padding:6px 16px;background:rgba(91,140,111,.08);border:1px solid rgba(91,140,111,.2);border-radius:20px;font-size:12px;font-weight:600;color:var(--acc)}
+
+/* Summary */
+.sum{background:var(--ds);border:1px solid rgba(91,140,111,.3);border-radius:14px;padding:32px 24px;margin-top:20px}
+.sum h3{font-family:'Manrope';font-size:20px;font-weight:800;color:var(--acc);margin-bottom:16px;letter-spacing:-.3px}
+.sum table{width:100%;border-collapse:collapse;margin:16px 0}
+.sum th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--dm);padding:8px 0;border-bottom:1px solid var(--db)}
+.sum td{padding:10px 0;font-size:13px;border-bottom:1px solid rgba(255,255,255,.04)}
+.sum td:first-child{font-weight:600;color:var(--dt);width:140px}
+.sum td:nth-child(2){color:var(--dd)}
+.hp{display:inline-block;padding:2px 10px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;cursor:pointer;transition:opacity .2s;margin-right:4px}
+.hp:hover{opacity:.7}
+
+.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--acc);color:#fff;padding:8px 22px;border-radius:9px;font-size:12px;font-weight:600;opacity:0;transition:all .3s;pointer-events:none;z-index:100}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+.foot{text-align:center;color:var(--dm);font-size:11px;padding:40px 20px 28px;border-top:1px solid var(--db);margin-top:48px}
+</style>
+</head>
+<body>
+
+<div class="hero">
+<div class="badge">Brand Guidelines &ndash; Final</div>
+<h1>Klarteq Design System</h1>
+<p>Logo, Farben, Typografie, Layout-Regeln, Do&rsquo;s &amp; Don&rsquo;ts. Deine Referenz f&uuml;r jede Design-Entscheidung.</p>
+</div>
+
+<div class="wrap">
+
+<!-- ══════ 1. LOGO ══════ -->
+<div class="sec">Abschnitt 1</div>
+<div class="sec-title">Logo</div>
+<div class="sec-sub">Wortmarke in Manrope. &bdquo;Klar&ldquo; in ExtraBold (800), &bdquo;teq&ldquo; in Regular (400). Salbeigr&uuml;ner Dot auf dem q. Eigenst&auml;ndige Logo-Schrift, unabh&auml;ngig vom Headline-Font (Sora).</div>
+
+<div class="logo-show">
+<div class="ls-half ls-light">
+  <div class="ls-label" style="color:var(--muted)">Auf hellem Hintergrund</div>
+  <div><span class="wm" style="font-family:'Manrope';font-weight:800;font-size:52px;letter-spacing:-2.5px;color:#374151">Klar</span><span class="wm" style="font-family:'Manrope';font-weight:400;font-size:52px;letter-spacing:-1.5px;color:#374151">teq</span><span class="dot" style="width:11px;height:11px;margin-left:-5px;margin-top:-2px"></span></div>
+</div>
+<div class="ls-half ls-dark">
+  <div class="ls-label" style="color:var(--dd)">Auf dunklem Hintergrund</div>
+  <div><span class="wm" style="font-family:'Manrope';font-weight:800;font-size:52px;letter-spacing:-2.5px;color:#F9FAFB">Klar</span><span class="wm" style="font-family:'Manrope';font-weight:400;font-size:52px;letter-spacing:-1.5px;color:#F9FAFB">teq</span><span class="dot" style="width:11px;height:11px;margin-left:-5px;margin-top:-2px"></span></div>
+</div>
+</div>
+
+<div class="logo-sizes">
+  <div class="sz">
+    <div><span class="wm" style="font-family:'Manrope';font-weight:800;font-size:36px;letter-spacing:-2px;color:var(--dt)">Klar</span><span class="wm" style="font-family:'Manrope';font-weight:400;font-size:36px;letter-spacing:-1px;color:var(--dt)">teq</span><span class="dot" style="width:8px;height:8px;margin-left:-4px;margin-top:-1px"></span></div>
+    <div class="sz-label">Website Header</div>
+  </div>
+  <div class="sz">
+    <div><span class="wm" style="font-family:'Manrope';font-weight:800;font-size:20px;letter-spacing:-1px;color:var(--dt)">Klar</span><span class="wm" style="font-family:'Manrope';font-weight:400;font-size:20px;letter-spacing:-.5px;color:var(--dt)">teq</span><span class="dot" style="width:5px;height:5px;margin-left:-3px;margin-top:0"></span></div>
+    <div class="sz-label">E-Mail / Dokumente</div>
+  </div>
+  <div class="sz">
+    <div><span class="wm" style="font-family:'Manrope';font-weight:800;font-size:13px;letter-spacing:-.5px;color:var(--dt)">Klar</span><span class="wm" style="font-family:'Manrope';font-weight:400;font-size:13px;letter-spacing:-.2px;color:var(--dt)">teq</span><span class="dot" style="width:3px;height:3px;margin-left:-2px;margin-top:1px"></span></div>
+    <div class="sz-label">Footer / Klein</div>
+  </div>
+  <div class="sz">
+    <div class="fav-box"><span>K</span><div class="fav-dot"></div></div>
+    <div class="sz-label">Favicon / Icon</div>
+  </div>
+</div>
+
+<div class="logo-rules">
+  <div class="lr">
+    <div class="lr-demo" style="background:#fff;border:1px solid #eee">
+      <span class="wm" style="font-family:'Manrope';font-weight:800;font-size:22px;letter-spacing:-1px;color:#374151">Klar</span><span class="wm" style="font-family:'Manrope';font-weight:400;font-size:22px;letter-spacing:-.5px;color:#374151">teq</span><span class="dot" style="width:5px;height:5px;margin-left:-2px;margin-top:0"></span>
+    </div>
+    <div class="lr-label yes">&#10003; Korrekt</div>
+  </div>
+  <div class="lr">
+    <div class="lr-demo" style="background:#fff;border:1px solid #eee">
+      <span class="wm" style="font-family:'Manrope';font-weight:800;font-size:22px;letter-spacing:-1px;color:#374151">KLAR</span><span class="wm" style="font-family:'Manrope';font-weight:400;font-size:22px;letter-spacing:-.5px;color:#374151">TEQ</span><span class="dot" style="width:5px;height:5px;margin-left:-2px;margin-top:0"></span>
+    </div>
+    <div class="lr-label no">&#10007; Nie in Versalien</div>
+  </div>
+  <div class="lr">
+    <div class="lr-demo" style="background:#fff;border:1px solid #eee">
+      <span class="wm" style="font-family:'Manrope';font-weight:800;font-size:22px;letter-spacing:-1px;color:#374151">Klar</span><span class="wm" style="font-family:'Manrope';font-weight:400;font-size:22px;letter-spacing:-.5px;color:#374151">teq</span>
+    </div>
+    <div class="lr-label no">&#10007; Nie ohne Dot</div>
+  </div>
+</div>
+
+<div class="card"><p><strong>Logo-Regeln:</strong> Der Sage-Dot geh&ouml;rt immer zum Logo. Nie drehen, strecken oder mit Effekten versehen. Mindestfreiraum: H&ouml;he des &bdquo;K&ldquo; auf jeder Seite. In reinem Text: einfach &bdquo;Klarteq&ldquo; schreiben. Die Logo-Schrift (Manrope) wird <em>nur</em> f&uuml;rs Logo verwendet &ndash; nie f&uuml;r Headlines oder Flie&szlig;text.</p></div>
+
+<!-- ══════ 2. FARBEN ══════ -->
+<div class="sec">Abschnitt 2</div>
+<div class="sec-title">Farbpalette &ndash; Slate &amp; Sage</div>
+<div class="sec-sub">Vier Farben. Jede hat eine klare Aufgabe.</div>
+
+<div class="color-grid">
+  <div class="cc" onclick="c('#374151')"><div class="cc-sw" style="background:#374151"><span style="color:#fff">#374151</span></div><div class="cc-meta"><div class="cc-name">Prim&auml;r &ndash; Warmgrau</div><div class="cc-use">Logo, Nav, Headlines, Icons</div></div></div>
+  <div class="cc" onclick="c('#5B8C6F')"><div class="cc-sw" style="background:#5B8C6F"><span style="color:#fff">#5B8C6F</span></div><div class="cc-meta"><div class="cc-name">Akzent &ndash; Salbeigr&uuml;n</div><div class="cc-use">CTAs, Links, Hover, Sage-Dot</div></div></div>
+  <div class="cc" onclick="c('#F9FAFB')"><div class="cc-sw" style="background:#F9FAFB;border:1px solid #E5E7EB"><span style="color:#374151">#F9FAFB</span></div><div class="cc-meta"><div class="cc-name">Neutral &ndash; Puder</div><div class="cc-use">Hintergr&uuml;nde, Sections, Cards</div></div></div>
+  <div class="cc" onclick="c('#111827')"><div class="cc-sw" style="background:#111827"><span style="color:#fff">#111827</span></div><div class="cc-meta"><div class="cc-name">Dunkel &ndash; Anthrazit</div><div class="cc-use">Flie&szlig;text, Footer, Kontrast</div></div></div>
+</div>
+<div class="card"><p><strong>Farbverh&auml;ltnis:</strong> ~60% Puder/Wei&szlig; &middot; ~25% Warmgrau + Anthrazit &middot; ~15% Salbeigr&uuml;n. Das Gr&uuml;n bleibt sparsam &ndash; es soll besonders wirken, nicht allgegenw&auml;rtig.</p></div>
+
+<!-- ══════ 3. TYPOGRAFIE ══════ -->
+<div class="sec">Abschnitt 3</div>
+<div class="sec-title">Typografie</div>
+<div class="sec-sub">Vier Schriften mit klarer Rollenverteilung. Logo und Headlines sind bewusst unterschiedlich.</div>
+
+<div class="ftc">
+<div class="ft-info"><div class="ft-label">Nur Logo</div><div class="ft-name" style="font-family:'Manrope'">Manrope</div><div class="ft-w">400, 800</div></div>
+<div class="ft-prev">
+  <div><span class="wm" style="font-family:'Manrope';font-weight:800;font-size:36px;letter-spacing:-2px;color:var(--dt)">Klar</span><span class="wm" style="font-family:'Manrope';font-weight:400;font-size:36px;letter-spacing:-1px;color:var(--dt)">teq</span><span class="dot" style="width:8px;height:8px;margin-left:-4px;margin-top:-1px"></span></div>
+  <div style="font-size:12px;color:var(--dd);margin-top:8px">Ausschlie&szlig;lich f&uuml;rs Logo. Weichere Kurven als Sora geben dem Logo eine eigene, nahbare Identit&auml;t.</div>
+</div>
+</div>
+
+<div class="ftc">
+<div class="ft-info"><div class="ft-label">&Uuml;berschriften</div><div class="ft-name" style="font-family:'Sora'">Sora</div><div class="ft-w">600, 700, 800</div></div>
+<div class="ft-prev">
+  <div style="font-family:'Sora';font-size:32px;font-weight:800;letter-spacing:-1px;margin-bottom:4px">Ihre Website als Werkzeug.</div>
+  <div style="font-family:'Sora';font-size:13px;font-weight:500;color:var(--dd)">Geometric Sans-Serif. Modern, technisch, pr&auml;zise. F&uuml;r alle Headlines, Subheadlines und Navigation.</div>
+</div>
+</div>
+
+<div class="ftc">
+<div class="ft-info"><div class="ft-label">Flie&szlig;text</div><div class="ft-name" style="font-family:'Source Serif 4',serif">Source Serif 4</div><div class="ft-w">400, 400i, 600</div></div>
+<div class="ft-prev">
+  <div style="font-family:'Source Serif 4',serif;font-size:18px;line-height:1.7">Professionelle Webentwicklung f&uuml;r lokale Unternehmen &ndash; schnell, sichtbar bei Google, und gemacht um Kunden zu bringen.</div>
+  <div style="font-size:12px;color:var(--dd);margin-top:6px">Serif als Flie&szlig;text hebt dich subtil ab. Signalisiert Sorgfalt und Glaubw&uuml;rdigkeit.</div>
+</div>
+</div>
+
+<div class="ftc">
+<div class="ft-info"><div class="ft-label">Code / Technisch</div><div class="ft-name" style="font-family:'JetBrains Mono',monospace">JetBrains Mono</div><div class="ft-w">400, 500</div></div>
+<div class="ft-prev">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--acc);background:var(--acc-light);padding:12px 16px;border-radius:8px;border:1px solid rgba(91,140,111,.15)">pagespeed: 98/100 &middot; mobile-first &middot; SEO-optimiert</div>
+  <div style="font-size:12px;color:var(--dd);margin-top:8px">F&uuml;r technische Daten, Kennzahlen, Code-Snippets.</div>
+</div>
+</div>
+
+<!-- ══════ 4. LIVE PREVIEW ══════ -->
+<div class="sec">Abschnitt 4</div>
+<div class="sec-title">Live-Preview</div>
+<div class="sec-sub">Manrope-Logo + Sora-Headlines + Source-Serif-Text zusammen in Aktion.</div>
+
+<div class="lp">
+<div class="lp-nav">
+  <div><span class="wm" style="font-family:'Manrope';font-weight:800;font-size:20px;letter-spacing:-1px;color:var(--pri)">Klar</span><span class="wm" style="font-family:'Manrope';font-weight:400;font-size:20px;letter-spacing:-.5px;color:var(--pri)">teq</span><span class="dot" style="width:5px;height:5px;margin-left:-3px;margin-top:0"></span></div>
+  <div class="lp-links"><span>Leistungen</span><span>&Uuml;ber mich</span><span>Referenzen</span><span style="color:var(--acc);font-weight:600">Kontakt</span></div>
+</div>
+<div class="lp-hero">
+  <div class="lp-kicker">Webentwicklung &middot; Ostwestfalen</div>
+  <div class="lp-h">Ihre Website soll Kunden bringen &ndash; nicht nur gut aussehen.</div>
+  <div class="lp-sub">Ich baue schnelle, sichtbare Websites f&uuml;r lokale Unternehmen. Kein Template-Baukasten, keine Agentur-Preise &ndash; sondern ma&szlig;geschneiderte L&ouml;sungen, die bei Google gefunden werden.</div>
+  <div class="lp-btns"><button class="lp-btn1">Kostenlos beraten lassen</button><button class="lp-btn2">Referenzen ansehen</button></div>
+</div>
+<div class="lp-trust">
+  <div class="lp-ti"><div class="lp-ti-icon">&#9889;</div><div class="lp-ti-text"><strong>&lt; 1 Sek.</strong> Ladezeit</div></div>
+  <div class="lp-ti"><div class="lp-ti-icon">&#128270;</div><div class="lp-ti-text"><strong>SEO</strong> von Anfang an</div></div>
+  <div class="lp-ti"><div class="lp-ti-icon">&#128241;</div><div class="lp-ti-text"><strong>100%</strong> mobil-optimiert</div></div>
+  <div class="lp-ti"><div class="lp-ti-icon">&#9742;</div><div class="lp-ti-text"><strong>Pers&ouml;nlich</strong> erreichbar</div></div>
+</div>
+</div>
+
+<!-- ══════ 5. LAYOUT ══════ -->
+<div class="sec">Abschnitt 5</div>
+<div class="sec-title">Layout &amp; Designelemente</div>
+<div class="rg" style="margin-bottom:20px">
+  <div class="card"><div style="font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--dm);margin-bottom:8px;font-weight:600">Wei&szlig;raum</div><p>Gro&szlig;z&uuml;gig. Sections: min. 80px Padding. Elemente nie quetschen.</p></div>
+  <div class="card"><div style="font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--dm);margin-bottom:8px;font-weight:600">Ecken</div><p>8-12px border-radius. Buttons 8px, Cards 12px. Modern + nahbar.</p></div>
+  <div class="card"><div style="font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--dm);margin-bottom:8px;font-weight:600">Schatten</div><p>0 1px 3px rgba(0,0,0,.06). Flat mit Hauch Tiefe. Kein Neumorphismus.</p></div>
+  <div class="card"><div style="font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--dm);margin-bottom:8px;font-weight:600">Animationen</div><p>Sanfte Fade-Ins (200-400ms). Dezente Hover-Transitions. Kein Bouncing.</p></div>
+</div>
+
+<!-- ══════ 6. DO'S & DON'TS ══════ -->
+<div class="sec">Abschnitt 6</div>
+<div class="sec-title">Do&rsquo;s &amp; Don&rsquo;ts</div>
+<div class="rg" style="margin-bottom:20px">
+<div class="rule do"><h4>&#10003; Do&rsquo;s</h4><ul>
+  <li>Gro&szlig;z&uuml;gig Wei&szlig;raum einsetzen</li>
+  <li>Salbeigr&uuml;n nur f&uuml;r CTAs, Links, Dot</li>
+  <li>Manrope nur f&uuml;rs Logo, Sora f&uuml;r Headlines</li>
+  <li>Source Serif 4 f&uuml;r Flie&szlig;text</li>
+  <li>Echte Ergebnisse zeigen (PageSpeed, Vorher/Nachher)</li>
+  <li>Immer fragen: &bdquo;Vertraut ein Handwerksmeister dem?&ldquo;</li>
+</ul></div>
+<div class="rule dont"><h4>&#10007; Don&rsquo;ts</h4><ul>
+  <li>Keine zus&auml;tzlichen Farben einf&uuml;hren</li>
+  <li>Kein Salbeigr&uuml;n als Fl&auml;chenfarbe</li>
+  <li>Manrope nie f&uuml;r Headlines oder Flie&szlig;text nutzen</li>
+  <li>Keine generischen Stock-Fotos</li>
+  <li>Logo nie in Versalien, nie ohne Dot, nie verzerren</li>
+  <li>Keine komplizierten Animationen oder Parallax</li>
+</ul></div>
+</div>
+
+<!-- ══════ 7. ADJEKTIVE ══════ -->
+<div class="sec">Markenpers&ouml;nlichkeit</div>
+<div class="sec-title">Stil-Adjektive</div>
+<div class="sec-sub">Dein Kompass bei jeder Design-Entscheidung:</div>
+<div class="adj-row">
+  <span class="adj">Klar</span><span class="adj">Geerdet</span><span class="adj">Kompetent</span><span class="adj">Nahbar</span><span class="adj">Pr&auml;zise</span><span class="adj">Zeitlos</span><span class="adj">Ruhig-selbstbewusst</span>
+</div>
+
+<!-- ══════ 8. SUMMARY ══════ -->
+<div class="sec">Referenz</div>
+<div class="sec-title">Brand Guideline Summary</div>
+<div class="sum">
+<h3>Klarteq &ndash; Slate &amp; Sage</h3>
+<table>
+<tr><th>Eigenschaft</th><th>Wert</th></tr>
+<tr><td>Logo-Font</td><td>Manrope &ndash; &bdquo;Klar&ldquo; 800, &bdquo;teq&ldquo; 400, Sage-Dot auf q</td></tr>
+<tr><td>Prim&auml;rfarbe</td><td><span class="hp" style="background:#374151;color:#fff" onclick="c('#374151')">#374151</span> Warmgrau</td></tr>
+<tr><td>Akzentfarbe</td><td><span class="hp" style="background:#5B8C6F;color:#fff" onclick="c('#5B8C6F')">#5B8C6F</span> Salbeigr&uuml;n</td></tr>
+<tr><td>Hintergrund</td><td><span class="hp" style="background:#F9FAFB;color:#374151;border:1px solid #E5E7EB" onclick="c('#F9FAFB')">#F9FAFB</span> Puder</td></tr>
+<tr><td>Textfarbe</td><td><span class="hp" style="background:#111827;color:#fff" onclick="c('#111827')">#111827</span> Anthrazit</td></tr>
+<tr><td>Headlines</td><td>Sora &ndash; 700/800, Letter-Spacing -0.5 bis -1px</td></tr>
+<tr><td>Flie&szlig;text</td><td>Source Serif 4 &ndash; 400, Line-Height 1.65-1.7</td></tr>
+<tr><td>Monospace</td><td>JetBrains Mono &ndash; 400/500</td></tr>
+<tr><td>Border-Radius</td><td>8-12px (Buttons 8px, Cards 12px)</td></tr>
+<tr><td>Shadows</td><td>0 1px 3px rgba(0,0,0,.06)</td></tr>
+<tr><td>Farbverh&auml;ltnis</td><td>60% Puder &middot; 25% Grau/Anthrazit &middot; 15% Salbei</td></tr>
+<tr><td>Favicon</td><td>Manrope &bdquo;K&ldquo; 800 in Warmgrau-Block (14px radius) + Sage-Dot</td></tr>
+<tr><td>Stil</td><td>Klar, geerdet, kompetent, nahbar, pr&auml;zise, zeitlos</td></tr>
+</table>
+</div>
+</div>
+
+<div class="foot">Klarteq Brand Guidelines &ndash; Final &ndash; Erstellt f&uuml;r Luca Sorci &middot; April 2026 &middot; Klicke auf Hex-Codes zum Kopieren</div>
+<div class="toast" id="t">Kopiert!</div>
+<script>function c(h){navigator.clipboard.writeText(h).then(function(){var t=document.getElementById('t');t.textContent=h+' kopiert!';t.classList.add('on');setTimeout(function(){t.classList.remove('on')},1600)})}</script>
+</body>
+</html>
