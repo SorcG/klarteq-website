@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Manrope, Sora, Source_Serif_4, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -46,7 +48,11 @@ export default function RootLayout({
       lang="de"
       className={`${manrope.variable} ${sora.variable} ${sourceSerif.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
