@@ -52,10 +52,10 @@ export default function Footer() {
             <ul className="mt-4 space-y-3 font-sora text-[15px]">
               <li>
                 <a
-                  href="mailto:hallo@klarteq.de"
+                  href="mailto:info@klarteq.de"
                   className="text-powder transition-colors hover:text-accent"
                 >
-                  hallo@klarteq.de
+                  info@klarteq.de
                 </a>
               </li>
               <li className="text-white/60">Gütersloh, NRW</li>

@@ -342,10 +342,10 @@ export default function LeistungenPage() {
           <p className="mt-4 font-serif text-[14px] text-white/60">
             Oder schreib direkt an{" "}
             <a
-              href="mailto:hallo@klarteq.de"
+              href="mailto:info@klarteq.de"
               className="text-accent hover:text-accent-hover hover:underline"
             >
-              hallo@klarteq.de
+              info@klarteq.de
             </a>
           </p>
         </div>

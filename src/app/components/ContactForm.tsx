@@ -101,7 +101,7 @@ export default function ContactForm() {
       router.push("/kontakt/danke");
     } catch {
       setSubmitError(
-        "Es ist ein Fehler aufgetreten. Bitte versuche es erneut oder schreib direkt an hallo@klarteq.de."
+        "Es ist ein Fehler aufgetreten. Bitte versuche es erneut oder schreib direkt an info@klarteq.de."
       );
       setSubmitting(false);
     }

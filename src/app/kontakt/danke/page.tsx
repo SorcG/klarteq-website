@@ -25,10 +25,10 @@ export default function DankePage() {
         <p className="mt-6 font-serif text-[14px] text-muted">
           Falls du in der Zwischenzeit Fragen hast:{" "}
           <a
-            href="mailto:hallo@klarteq.de"
+            href="mailto:info@klarteq.de"
             className="text-accent hover:text-accent-hover hover:underline"
           >
-            hallo@klarteq.de
+            info@klarteq.de
           </a>
         </p>
         <div className="mt-10 flex justify-center">
