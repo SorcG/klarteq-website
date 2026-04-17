@@ -172,10 +172,10 @@ export default function HomePage() {
           style={{
             top: "-40px",
             right: "-40px",
-            width: "200px",
-            height: "200px",
+            width: "300px",
+            height: "300px",
             background:
-              "radial-gradient(circle, rgba(91,140,111,0.12), transparent 70%)",
+              "radial-gradient(circle, rgba(91,140,111,0.25), transparent 70%)",
             borderRadius: "50%",
           }}
         />
