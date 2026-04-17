@@ -1,5 +1,11 @@
+# *
 User-agent: *
 Allow: /
 Disallow: /kontakt/danke
 Disallow: /preview
+
+# Host
+Host: https://klarteq.de
+
+# Sitemaps
 Sitemap: https://klarteq.de/sitemap.xml
