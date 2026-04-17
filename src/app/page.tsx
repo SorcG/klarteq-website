@@ -168,11 +168,15 @@ export default function HomePage() {
       <section className="relative overflow-hidden bg-powder">
         <div
           aria-hidden="true"
-          className="hero-pulse pointer-events-none absolute inset-0"
+          className="pulse-gradient pointer-events-none absolute"
           style={{
-            backgroundImage:
-              "radial-gradient(circle at top right, rgba(91,140,111,0.08), transparent 60%)",
-            transformOrigin: "top right",
+            top: "-40px",
+            right: "-40px",
+            width: "200px",
+            height: "200px",
+            background:
+              "radial-gradient(circle, rgba(91,140,111,0.12), transparent 70%)",
+            borderRadius: "50%",
           }}
         />
         <div className="relative mx-auto max-w-[1200px] px-6 py-24 md:py-32">
