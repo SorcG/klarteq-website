@@ -166,51 +166,67 @@ export default function HomePage() {
       />
       {/* 1. Hero */}
       <section className="relative overflow-hidden bg-powder">
+        {/* Blob 1 – oben links: grosser Sage-Glow */}
         <div
           aria-hidden="true"
-          className="pulse-gradient pointer-events-none absolute"
+          className="float-blob float-blob-1 pointer-events-none absolute"
           style={{
-            top: "-120px",
-            right: "-80px",
-            width: "560px",
-            height: "560px",
-            background:
-              "radial-gradient(circle, rgba(91,140,111,0.35), transparent 65%)",
-            filter: "blur(60px)",
+            top: "-80px",
+            left: "-60px",
+            width: "520px",
+            height: "520px",
+            background: "radial-gradient(circle, rgba(91,140,111,0.38), transparent 65%)",
+            filter: "blur(65px)",
             borderRadius: "50%",
-            animationDuration: "12s",
+            animationDuration: "22s",
           }}
         />
+        {/* Blob 2 – oben rechts: Slate-Glow */}
         <div
           aria-hidden="true"
-          className="pulse-gradient pointer-events-none absolute"
+          className="float-blob float-blob-2 pointer-events-none absolute"
           style={{
-            bottom: "-140px",
-            left: "-100px",
+            top: "-100px",
+            right: "-60px",
             width: "480px",
             height: "480px",
-            background:
-              "radial-gradient(circle, rgba(55,65,81,0.14), transparent 70%)",
+            background: "radial-gradient(circle, rgba(55,65,81,0.18), transparent 70%)",
             filter: "blur(70px)",
             borderRadius: "50%",
-            animationDuration: "16s",
-            animationDelay: "-4s",
+            animationDuration: "26s",
+            animationDelay: "-8s",
           }}
         />
+        {/* Blob 3 – Mitte: kleiner Sage-Akzent */}
         <div
           aria-hidden="true"
-          className="pulse-gradient pointer-events-none absolute"
+          className="float-blob float-blob-3 pointer-events-none absolute"
           style={{
-            top: "45%",
-            right: "8%",
-            width: "320px",
-            height: "320px",
-            background:
-              "radial-gradient(circle, rgba(91,140,111,0.22), transparent 60%)",
-            filter: "blur(50px)",
+            top: "35%",
+            left: "40%",
+            width: "340px",
+            height: "340px",
+            background: "radial-gradient(circle, rgba(91,140,111,0.28), transparent 60%)",
+            filter: "blur(55px)",
             borderRadius: "50%",
-            animationDuration: "10s",
-            animationDelay: "-7s",
+            animationDuration: "18s",
+            animationDelay: "-5s",
+          }}
+        />
+        {/* Blob 4 – unten rechts: grosser Sage-Glow */}
+        <div
+          aria-hidden="true"
+          className="float-blob float-blob-4 pointer-events-none absolute"
+          style={{
+            bottom: "-120px",
+            right: "10%",
+            width: "500px",
+            height: "500px",
+            background: "radial-gradient(circle, rgba(91,140,111,0.3), transparent 65%)",
+            filter: "blur(60px)",
+            borderRadius: "50%",
+            animationDuration: "20s",
+            animationDelay: "-12s",
           }}
         />
         <div className="relative mx-auto max-w-[1200px] px-6 py-24 md:py-32">
