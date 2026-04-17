@@ -4,10 +4,17 @@ import Button from "../components/Button";
 import Card from "../components/Card";
 import Kicker from "../components/Kicker";
 import FAQ from "../components/FAQ";
+import {
+  starterServiceSchema,
+  businessServiceSchema,
+  premiumServiceSchema,
+} from "../lib/schema";
 
 export const metadata: Metadata = {
-  title:
-    "Leistungen & Preise · Website erstellen lassen in Gütersloh | Klarteq",
+  title: {
+    absolute:
+      "Leistungen & Preise · Website erstellen lassen in Gütersloh | Klarteq",
+  },
   description:
     "Drei Pakete für lokale Unternehmen in OWL: Starter ab 890 €, Business ab 1.690 €, Premium ab 2.990 €. Transparent, schnell, ohne Templates.",
 };
@@ -185,6 +192,24 @@ function Checklist({ items }: { items: string[] }) {
 export default function LeistungenPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(starterServiceSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(businessServiceSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(premiumServiceSchema),
+        }}
+      />
       {/* 7.2 Hero */}
       <section className="bg-powder">
         <div className="mx-auto max-w-[1200px] px-6 py-24 md:py-28">

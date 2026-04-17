@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Kicker from "../components/Kicker";
 
 export const metadata: Metadata = {
-  title: "Impressum | Klarteq",
+  title: { absolute: "Impressum | Klarteq" },
   description:
     "Impressum und rechtliche Angaben von Klarteq, Luca Sorci, Gütersloh.",
   robots: { index: true, follow: true },

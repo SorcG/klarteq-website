@@ -3,9 +3,12 @@ import Image from "next/image";
 import Button from "../components/Button";
 import Card from "../components/Card";
 import Kicker from "../components/Kicker";
+import { personSchema } from "../lib/schema";
 
 export const metadata: Metadata = {
-  title: "Über Luca Sorci · Webentwickler aus Gütersloh | Klarteq",
+  title: {
+    absolute: "Über Luca Sorci · Webentwickler aus Gütersloh | Klarteq",
+  },
   description:
     "Ich bin Luca, Webentwickler aus Gütersloh. Hauptberuflich im E-Commerce, nebenberuflich baue ich Websites für lokale Unternehmen in OWL.",
 };
@@ -32,6 +35,10 @@ const VALUES = [
 export default function UeberMichPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       {/* 8.2 Hero */}
       <section className="bg-powder">
         <div className="mx-auto max-w-[1200px] px-6 py-24 md:py-28">

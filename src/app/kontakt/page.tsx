@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import ContactForm from "../components/ContactForm";
 import Kicker from "../components/Kicker";
+import { localBusinessSchema } from "../lib/schema";
 
 export const metadata: Metadata = {
-  title: "Kontakt · Webentwickler in Gütersloh anfragen | Klarteq",
+  title: {
+    absolute: "Kontakt · Webentwickler in Gütersloh anfragen | Klarteq",
+  },
   description:
     "Schreib mir für dein Website-Projekt in OWL. Kostenloses Erstgespräch, Antwort innerhalb von 24 Stunden. Aus Gütersloh, für Ostwestfalen.",
 };
@@ -27,6 +30,12 @@ const NEXT_STEPS = [
 export default function KontaktPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema),
+        }}
+      />
       {/* 9.2 Hero */}
       <section className="bg-powder">
         <div className="mx-auto max-w-[1200px] px-6 py-24 md:py-28">

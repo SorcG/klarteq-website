@@ -34,8 +34,28 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Klarteq",
-  description: "Websites für lokale Unternehmen in Ostwestfalen.",
+  metadataBase: new URL("https://klarteq.de"),
+  title: {
+    default: "Klarteq · Webdesign für lokale Unternehmen in OWL",
+    template: "%s | Klarteq",
+  },
+  description:
+    "Schnelle, sichtbare Websites für lokale Unternehmen in Gütersloh und Ostwestfalen.",
+  authors: [{ name: "Luca Sorci" }],
+  creator: "Luca Sorci",
+  publisher: "Klarteq",
+  robots: { index: true, follow: true },
+  alternates: { canonical: "https://klarteq.de" },
+  openGraph: {
+    type: "website",
+    locale: "de_DE",
+    url: "https://klarteq.de",
+    siteName: "Klarteq",
+  },
+  verification: {
+    // Nach Google-Search-Console-Setup eintragen:
+    // google: 'XXX',
+  },
 };
 
 export default function RootLayout({

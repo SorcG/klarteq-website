@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Kicker from "../components/Kicker";
 
 export const metadata: Metadata = {
-  title: "Datenschutzerklärung | Klarteq",
+  title: { absolute: "Datenschutzerklärung | Klarteq" },
   description: "Datenschutzerklärung von Klarteq.",
   robots: { index: true, follow: true },
 };

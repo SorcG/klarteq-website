@@ -13,10 +13,13 @@ import Button from "./components/Button";
 import Card from "./components/Card";
 import Kicker from "./components/Kicker";
 import FAQ from "./components/FAQ";
+import { localBusinessSchema } from "./lib/schema";
 
 export const metadata: Metadata = {
-  title:
-    "Webdesign Gütersloh · Schnelle Websites für lokale Unternehmen | Klarteq",
+  title: {
+    absolute:
+      "Webdesign Gütersloh · Schnelle Websites für lokale Unternehmen | Klarteq",
+  },
   description:
     "Schnelle, sichtbare Websites für lokale Unternehmen in Gütersloh und OWL. Drei Pakete ab 890 €. Jetzt kostenloses Erstgespräch anfragen.",
   openGraph: {
@@ -154,6 +157,12 @@ const FAQ_ITEMS = [
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema),
+        }}
+      />
       {/* 1. Hero */}
       <section
         className="relative bg-powder"

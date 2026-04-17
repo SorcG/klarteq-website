@@ -3,7 +3,7 @@ import { CheckCircle2 } from "lucide-react";
 import Button from "../../components/Button";
 
 export const metadata: Metadata = {
-  title: "Danke für deine Anfrage | Klarteq",
+  title: { absolute: "Danke für deine Anfrage | Klarteq" },
   description: "Deine Anfrage ist bei Klarteq eingegangen.",
   robots: { index: false, follow: false },
 };

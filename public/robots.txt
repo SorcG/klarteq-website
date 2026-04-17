@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /kontakt/danke
+Disallow: /preview
+Sitemap: https://klarteq.de/sitemap.xml

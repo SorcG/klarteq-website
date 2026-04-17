@@ -80,9 +80,6 @@ export default function ContactForm() {
     setErrors(validation);
     if (Object.keys(validation).length > 0) return;
 
-    // Honeypot: wenn ausgefüllt, Bot erkannt – stumm abbrechen.
-    if (website) return;
-
     setSubmitting(true);
     try {
       const res = await fetch("/api/kontakt", {
