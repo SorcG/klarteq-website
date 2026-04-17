@@ -23,8 +23,6 @@ export default function ImpressumPage() {
           <p>
             Luca Sorci
             <br />
-            Name: Luca Sorci
-            <br />
             Geschäftsbezeichnung / Unternehmensname: Klarteq
             <br />
             Webentwicklung
@@ -36,7 +34,10 @@ export default function ImpressumPage() {
 
           <h2 className={H2_CLASS}>Kontakt</h2>
           <p className="mt-4">
-            Telefon: 017670552197
+            Telefon:{" "}
+            <a href="tel:017670552197" className={LINK_CLASS}>
+              017670552197
+            </a>
             <br />
             E-Mail:{" "}
             <a href="mailto:info@klarteq.de" className={LINK_CLASS}>
@@ -44,39 +45,19 @@ export default function ImpressumPage() {
             </a>
           </p>
 
-          <h2 className={H2_CLASS}>
-            Berufsbezeichnung und berufsrechtliche Regelungen
-          </h2>
-          <p className="mt-4">
-            Berufsbezeichnung:
-            <br />
-            Webentwickler
-          </p>
+          <h2 className={H2_CLASS}>Berufsbezeichnung</h2>
+          <p className="mt-4">Webentwickler</p>
 
           <h2 className={H2_CLASS}>Redaktionell verantwortlich</h2>
           <p className="mt-4">Luca Sorci</p>
 
           <h2 className={H2_CLASS}>
-            {
-              "Verbraucher\u00ADstreit\u00ADbeilegung/Universal\u00ADschlichtungs\u00ADstelle"
-            }
+            Verbraucherschlichtung/Universalschlichtungsstelle
           </h2>
           <p className="mt-4">
             Wir sind nicht bereit oder verpflichtet, an
             Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
             teilzunehmen.
-          </p>
-
-          <p className="mt-10 text-[14px] text-muted">
-            Quelle:{" "}
-            <a
-              href="https://www.e-recht24.de/impressum-generator.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={LINK_CLASS}
-            >
-              https://www.e-recht24.de/impressum-generator.html
-            </a>
           </p>
         </div>
       </div>
