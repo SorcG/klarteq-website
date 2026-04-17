@@ -100,17 +100,20 @@
 
 @keyframes pulse-gradient {
   0%, 100% {
-    opacity: 0.6;
+    opacity: 0.5;
     transform: scale(1);
   }
   50% {
-    opacity: 1;
-    transform: scale(1.15);
+    opacity: 0.9;
+    transform: scale(1.08);
   }
 }
 
 .pulse-gradient {
-  animation: pulse-gradient 8s ease-in-out infinite;
+  animation-name: pulse-gradient;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  will-change: opacity, transform;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -123,5 +126,6 @@
 
   .pulse-gradient {
     animation: none;
+    opacity: 0.7;
   }
 }
