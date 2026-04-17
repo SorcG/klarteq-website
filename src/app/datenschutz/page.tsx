@@ -141,6 +141,19 @@ export default function DatenschutzPage() {
             <br />
             USA
           </p>
+          <p className={P_CLASS}>
+            Vercel hat Compliance-Maßnahmen für internationale
+            Datenübermittlungen umgesetzt. Weitere Informationen finden Sie
+            in der Datenschutzerklärung von Vercel:{" "}
+            <a
+              href="https://vercel.com/legal/privacy-policy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={LINK_CLASS}
+            >
+              https://vercel.com/legal/privacy-policy
+            </a>
+          </p>
 
           {/* 3. Allgemeine Hinweise und Pflichtinformationen */}
           <h2 className={H2_CLASS}>
