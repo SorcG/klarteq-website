@@ -13,6 +13,7 @@ import Button from "./components/Button";
 import Card from "./components/Card";
 import Kicker from "./components/Kicker";
 import FAQ from "./components/FAQ";
+import HeroCounters from "./components/HeroCounters";
 import { localBusinessSchema } from "./lib/schema";
 
 export const metadata: Metadata = {
@@ -164,14 +165,17 @@ export default function HomePage() {
         }}
       />
       {/* 1. Hero */}
-      <section
-        className="relative bg-powder"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at top right, rgba(91,140,111,0.08), transparent 60%)",
-        }}
-      >
-        <div className="mx-auto max-w-[1200px] px-6 py-24 md:py-32">
+      <section className="relative overflow-hidden bg-powder">
+        <div
+          aria-hidden="true"
+          className="hero-pulse pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at top right, rgba(91,140,111,0.08), transparent 60%)",
+            transformOrigin: "top right",
+          }}
+        />
+        <div className="relative mx-auto max-w-[1200px] px-6 py-24 md:py-32">
           <div
             className="opacity-0 animate-fade-in-up"
             style={{ animationDelay: "100ms" }}
@@ -208,6 +212,12 @@ export default function HomePage() {
           >
             Aus Gütersloh · Für Unternehmen in OWL
           </p>
+          <div
+            className="mt-6 opacity-0 animate-fade-in-up"
+            style={{ animationDelay: "600ms" }}
+          >
+            <HeroCounters />
+          </div>
         </div>
       </section>
 
