@@ -14,6 +14,7 @@ import Card from "./components/Card";
 import Kicker from "./components/Kicker";
 import FAQ from "./components/FAQ";
 import HeroCounters from "./components/HeroCounters";
+import ScrollReveal from "./components/ScrollReveal";
 import { localBusinessSchema } from "./lib/schema";
 
 export const metadata: Metadata = {
@@ -164,9 +165,8 @@ export default function HomePage() {
           __html: JSON.stringify(localBusinessSchema),
         }}
       />
-      {/* 1. Hero */}
+      {/* 1. Hero – bleibt mit bestehender fade-in-up Animation */}
       <section className="relative overflow-hidden bg-powder">
-        {/* Blob 1 – oben links: grosser Sage-Glow */}
         <div
           aria-hidden="true"
           className="float-blob float-blob-1 pointer-events-none absolute"
@@ -181,7 +181,6 @@ export default function HomePage() {
             animationDuration: "22s",
           }}
         />
-        {/* Blob 2 – oben rechts: Slate-Glow */}
         <div
           aria-hidden="true"
           className="float-blob float-blob-2 pointer-events-none absolute"
@@ -197,7 +196,6 @@ export default function HomePage() {
             animationDelay: "-8s",
           }}
         />
-        {/* Blob 3 – Mitte: kleiner Sage-Akzent */}
         <div
           aria-hidden="true"
           className="float-blob float-blob-3 pointer-events-none absolute"
@@ -213,7 +211,6 @@ export default function HomePage() {
             animationDelay: "-5s",
           }}
         />
-        {/* Blob 4 – unten rechts: grosser Sage-Glow */}
         <div
           aria-hidden="true"
           className="float-blob float-blob-4 pointer-events-none absolute"
@@ -278,34 +275,42 @@ export default function HomePage() {
       {/* 2. Problem */}
       <section className="bg-white">
         <div className="mx-auto max-w-[1200px] px-6 py-20 md:py-28">
-          <Kicker>Das Problem</Kicker>
-          <h2 className="max-w-[760px] text-h2">
-            Deine Website sollte Kunden bringen. Nicht nur existieren.
-          </h2>
-          <p className="mt-6 max-w-[760px] font-serif text-body leading-[1.7] text-muted">
-            Die meisten Websites lokaler Unternehmen haben eines gemeinsam: Sie
-            wurden einmal gebaut und dann vergessen. Das Ergebnis sieht man in
-            den Zahlen. Besucher, die nach drei Sekunden wieder weg sind, weil
-            die Seite zu langsam lädt. Anfragen, die nicht kommen, weil Google
-            die Seite auf Platz 40 versteckt. Kunden, die beim Mitbewerber
-            landen, weil der eine mobile Seite hat, die wirklich funktioniert.
-          </p>
+          <ScrollReveal>
+            <Kicker>Das Problem</Kicker>
+          </ScrollReveal>
+          <ScrollReveal delay={80}>
+            <h2 className="max-w-[760px] text-h2">
+              Deine Website sollte Kunden bringen. Nicht nur existieren.
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={160}>
+            <p className="mt-6 max-w-[760px] font-serif text-body leading-[1.7] text-muted">
+              Die meisten Websites lokaler Unternehmen haben eines gemeinsam: Sie
+              wurden einmal gebaut und dann vergessen. Das Ergebnis sieht man in
+              den Zahlen. Besucher, die nach drei Sekunden wieder weg sind, weil
+              die Seite zu langsam lädt. Anfragen, die nicht kommen, weil Google
+              die Seite auf Platz 40 versteckt. Kunden, die beim Mitbewerber
+              landen, weil der eine mobile Seite hat, die wirklich funktioniert.
+            </p>
+          </ScrollReveal>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {PROBLEM_CARDS.map(({ icon: Icon, title, text }) => (
-              <Card key={title}>
-                <div
-                  className="flex h-12 w-12 items-center justify-center rounded-card bg-accent-light"
-                  aria-hidden="true"
-                >
-                  <Icon size={24} className="text-primary" />
-                </div>
-                <h3 className="mt-4 font-sora text-[20px] font-bold text-primary">
-                  {title}
-                </h3>
-                <p className="mt-2 font-serif text-[16px] leading-[1.7] text-muted">
-                  {text}
-                </p>
-              </Card>
+            {PROBLEM_CARDS.map(({ icon: Icon, title, text }, idx) => (
+              <ScrollReveal key={title} delay={240 + idx * 80}>
+                <Card>
+                  <div
+                    className="flex h-12 w-12 items-center justify-center rounded-card bg-accent-light"
+                    aria-hidden="true"
+                  >
+                    <Icon size={24} className="text-primary" />
+                  </div>
+                  <h3 className="mt-4 font-sora text-[20px] font-bold text-primary">
+                    {title}
+                  </h3>
+                  <p className="mt-2 font-serif text-[16px] leading-[1.7] text-muted">
+                    {text}
+                  </p>
+                </Card>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -314,40 +319,47 @@ export default function HomePage() {
       {/* 3. So arbeite ich */}
       <section className="bg-powder">
         <div className="mx-auto max-w-[1200px] px-6 py-20 md:py-28">
-          <Kicker>Mein Ansatz</Kicker>
-          <h2 className="max-w-[760px] text-h2">
-            Wie ich arbeite – und warum das anders ist.
-          </h2>
-          <p className="mt-6 max-w-[760px] font-serif text-body leading-[1.7] text-muted">
-            Ich komme nicht aus der klassischen Webdesign-Welt. Hauptberuflich
-            baue ich im E-Commerce mit – einer Branche, in der jede Sekunde
-            Ladezeit und jeder Klick gemessen wird. Dort lernst du sehr
-            schnell, was eine Website leisten muss, um Umsatz zu machen.
-            Dieses Denken bringe ich in jedes Projekt.
-          </p>
+          <ScrollReveal>
+            <Kicker>Mein Ansatz</Kicker>
+          </ScrollReveal>
+          <ScrollReveal delay={80}>
+            <h2 className="max-w-[760px] text-h2">
+              Wie ich arbeite – und warum das anders ist.
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={160}>
+            <p className="mt-6 max-w-[760px] font-serif text-body leading-[1.7] text-muted">
+              Ich komme nicht aus der klassischen Webdesign-Welt. Hauptberuflich
+              baue ich im E-Commerce mit – einer Branche, in der jede Sekunde
+              Ladezeit und jeder Klick gemessen wird. Dort lernst du sehr
+              schnell, was eine Website leisten muss, um Umsatz zu machen.
+              Dieses Denken bringe ich in jedes Projekt.
+            </p>
+          </ScrollReveal>
           <div className="mt-16 flex flex-col gap-14">
             {APPROACH_BLOCKS.map(({ icon: Icon, title, text }, idx) => {
               const reverse = idx % 2 === 1;
               return (
-                <div
-                  key={title}
-                  className={`flex flex-col gap-6 md:flex-row md:items-center md:gap-12 ${
-                    reverse ? "md:flex-row-reverse" : ""
-                  }`}
-                >
+                <ScrollReveal key={title} delay={idx * 100}>
                   <div
-                    className="flex h-14 w-14 shrink-0 items-center justify-center rounded-card bg-accent-light"
-                    aria-hidden="true"
+                    className={`flex flex-col gap-6 md:flex-row md:items-center md:gap-12 ${
+                      reverse ? "md:flex-row-reverse" : ""
+                    }`}
                   >
-                    <Icon size={28} className="text-primary" />
+                    <div
+                      className="flex h-14 w-14 shrink-0 items-center justify-center rounded-card bg-accent-light"
+                      aria-hidden="true"
+                    >
+                      <Icon size={28} className="text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-sora text-h3 text-primary">{title}</h3>
+                      <p className="mt-3 max-w-[640px] font-serif text-body leading-[1.7] text-muted">
+                        {text}
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="font-sora text-h3 text-primary">{title}</h3>
-                    <p className="mt-3 max-w-[640px] font-serif text-body leading-[1.7] text-muted">
-                      {text}
-                    </p>
-                  </div>
-                </div>
+                </ScrollReveal>
               );
             })}
           </div>
@@ -357,88 +369,106 @@ export default function HomePage() {
       {/* 4. Leistungen-Teaser */}
       <section className="bg-white">
         <div className="mx-auto max-w-[1200px] px-6 py-20 md:py-28">
-          <Kicker>Leistungen</Kicker>
-          <h2 className="max-w-[760px] text-h2">
-            Website-Pakete für Unternehmen in Gütersloh und OWL.
-          </h2>
-          <p className="mt-6 max-w-[760px] font-serif text-body leading-[1.7] text-muted">
-            Drei Pakete, klare Preise, keine Überraschungen. Wähle das Paket,
-            das zu deinem Unternehmen passt – oder lass uns im Erstgespräch
-            gemeinsam herausfinden, welches es ist.
-          </p>
-
+          <ScrollReveal>
+            <Kicker>Leistungen</Kicker>
+          </ScrollReveal>
+          <ScrollReveal delay={80}>
+            <h2 className="max-w-[760px] text-h2">
+              Website-Pakete für Unternehmen in Gütersloh und OWL.
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={160}>
+            <p className="mt-6 max-w-[760px] font-serif text-body leading-[1.7] text-muted">
+              Drei Pakete, klare Preise, keine Überraschungen. Wähle das Paket,
+              das zu deinem Unternehmen passt – oder lass uns im Erstgespräch
+              gemeinsam herausfinden, welches es ist.
+            </p>
+          </ScrollReveal>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {PACKAGES.map((pkg) => (
-              <Card key={pkg.name} highlighted={pkg.highlighted}>
-                <h3 className="font-sora text-h3 text-primary">{pkg.name}</h3>
-                <p className="mt-4 font-mono text-price text-primary">
-                  {pkg.price}
-                </p>
-                <p className="mt-1 font-serif text-[13px] italic text-muted">
-                  Einführungspreis · limitiert
-                </p>
-                <p className="mt-5 font-serif text-[16px] leading-[1.7] text-muted">
-                  {pkg.description}
-                </p>
-                <p className="mt-4 font-serif text-[15px] italic leading-[1.65] text-muted">
-                  {pkg.audience}
-                </p>
-                <div className="mt-6">
-                  <Button variant="link" href={pkg.href}>
-                    Details ansehen →
-                  </Button>
-                </div>
-              </Card>
+            {PACKAGES.map((pkg, idx) => (
+              <ScrollReveal key={pkg.name} delay={240 + idx * 80}>
+                <Card highlighted={pkg.highlighted}>
+                  <h3 className="font-sora text-h3 text-primary">{pkg.name}</h3>
+                  <p className="mt-4 font-mono text-price text-primary">
+                    {pkg.price}
+                  </p>
+                  <p className="mt-1 font-serif text-[13px] italic text-muted">
+                    Einführungspreis · limitiert
+                  </p>
+                  <p className="mt-5 font-serif text-[16px] leading-[1.7] text-muted">
+                    {pkg.description}
+                  </p>
+                  <p className="mt-4 font-serif text-[15px] italic leading-[1.65] text-muted">
+                    {pkg.audience}
+                  </p>
+                  <div className="mt-6">
+                    <Button variant="link" href={pkg.href}>
+                      Details ansehen →
+                    </Button>
+                  </div>
+                </Card>
+              </ScrollReveal>
             ))}
           </div>
-
-          <p className="mt-10 text-center font-serif text-[15px] text-muted">
-            Alle Preise sind Endpreise. Ich bin Kleinunternehmer nach §19 UStG
-            – keine Mehrwertsteuer.
-          </p>
-          <div className="mt-6 text-center">
-            <Button variant="link" href="/leistungen">
-              Alle Leistungen &amp; Prozess ansehen →
-            </Button>
-          </div>
+          <ScrollReveal delay={80}>
+            <p className="mt-10 text-center font-serif text-[15px] text-muted">
+              Alle Preise sind Endpreise. Ich bin Kleinunternehmer nach §19 UStG
+              – keine Mehrwertsteuer.
+            </p>
+          </ScrollReveal>
+          <ScrollReveal delay={140}>
+            <div className="mt-6 text-center">
+              <Button variant="link" href="/leistungen">
+                Alle Leistungen &amp; Prozess ansehen →
+              </Button>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* 5. Referenzen-Teaser */}
       <section className="bg-powder">
         <div className="mx-auto max-w-[1200px] px-6 py-20 md:py-28">
-          <Kicker>Referenzen</Kicker>
-          <h2 className="max-w-[760px] text-h2">Aktuelle Projekte.</h2>
-          <p className="mt-6 max-w-[760px] font-serif text-body leading-[1.7] text-muted">
-            Klarteq ist neu – aber das Handwerk nicht. Hier sind Projekte, die
-            ich bereits umgesetzt habe. Weitere Referenzen folgen, sobald die
-            ersten Klarteq-Kunden live sind.
-          </p>
+          <ScrollReveal>
+            <Kicker>Referenzen</Kicker>
+          </ScrollReveal>
+          <ScrollReveal delay={80}>
+            <h2 className="max-w-[760px] text-h2">Aktuelle Projekte.</h2>
+          </ScrollReveal>
+          <ScrollReveal delay={160}>
+            <p className="mt-6 max-w-[760px] font-serif text-body leading-[1.7] text-muted">
+              Klarteq ist neu – aber das Handwerk nicht. Hier sind Projekte, die
+              ich bereits umgesetzt habe. Weitere Referenzen folgen, sobald die
+              ersten Klarteq-Kunden live sind.
+            </p>
+          </ScrollReveal>
           <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {REFERENCES.map((ref) => (
-              <Card key={ref.title}>
-                <div
-                  role="img"
-                  aria-label={ref.alt}
-                  className="mb-6 flex aspect-[16/9] w-full items-center justify-center rounded-card border border-border bg-accent-light"
-                >
-                  <span className="font-mono text-[12px] uppercase tracking-wider text-muted">
-                    Screenshot folgt
-                  </span>
-                </div>
-                <h3 className="font-sora text-h3 text-primary">{ref.title}</h3>
-                <p className="mt-2 font-mono text-[12px] text-muted">
-                  {ref.meta}
-                </p>
-                <p className="mt-4 font-serif text-[16px] leading-[1.7] text-muted">
-                  {ref.description}
-                </p>
-                <div className="mt-6">
-                  <Button variant="link" href={ref.href}>
-                    Zur Website →
-                  </Button>
-                </div>
-              </Card>
+            {REFERENCES.map((ref, idx) => (
+              <ScrollReveal key={ref.title} delay={240 + idx * 100}>
+                <Card>
+                  <div
+                    role="img"
+                    aria-label={ref.alt}
+                    className="mb-6 flex aspect-[16/9] w-full items-center justify-center rounded-card border border-border bg-accent-light"
+                  >
+                    <span className="font-mono text-[12px] uppercase tracking-wider text-muted">
+                      Screenshot folgt
+                    </span>
+                  </div>
+                  <h3 className="font-sora text-h3 text-primary">{ref.title}</h3>
+                  <p className="mt-2 font-mono text-[12px] text-muted">
+                    {ref.meta}
+                  </p>
+                  <p className="mt-4 font-serif text-[16px] leading-[1.7] text-muted">
+                    {ref.description}
+                  </p>
+                  <div className="mt-6">
+                    <Button variant="link" href={ref.href}>
+                      Zur Website →
+                    </Button>
+                  </div>
+                </Card>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -448,7 +478,7 @@ export default function HomePage() {
       <section className="bg-white">
         <div className="mx-auto max-w-[1200px] px-6 py-20 md:py-28">
           <div className="grid gap-12 md:grid-cols-5 md:items-center">
-            <div className="md:col-span-2">
+            <ScrollReveal className="md:col-span-2">
               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-card">
                 <Image
                   src="/images/luca1.jpg"
@@ -459,8 +489,8 @@ export default function HomePage() {
                   priority={false}
                 />
               </div>
-            </div>
-            <div className="md:col-span-3">
+            </ScrollReveal>
+            <ScrollReveal delay={120} className="md:col-span-3">
               <Kicker>Wer baut hier</Kicker>
               <h2 className="text-h2">
                 Luca Sorci – dein Webentwickler aus Gütersloh.
@@ -484,7 +514,7 @@ export default function HomePage() {
                   Mehr über mich →
                 </Button>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -492,42 +522,56 @@ export default function HomePage() {
       {/* 7. FAQ */}
       <section className="bg-powder">
         <div className="mx-auto max-w-[1200px] px-6 py-20 md:py-28">
-          <Kicker>Häufige Fragen</Kicker>
-          <h2 className="max-w-[760px] text-h2">
-            Was Kunden vor dem ersten Gespräch fragen.
-          </h2>
-          <div className="mt-12 max-w-[860px]">
-            <FAQ items={FAQ_ITEMS} />
-          </div>
+          <ScrollReveal>
+            <Kicker>Häufige Fragen</Kicker>
+          </ScrollReveal>
+          <ScrollReveal delay={80}>
+            <h2 className="max-w-[760px] text-h2">
+              Was Kunden vor dem ersten Gespräch fragen.
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={160}>
+            <div className="mt-12 max-w-[860px]">
+              <FAQ items={FAQ_ITEMS} />
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* 8. Abschluss-CTA */}
       <section className="bg-dark">
         <div className="mx-auto max-w-[720px] px-6 py-24 text-center">
-          <h2 className="text-h2 text-white">
-            Lass uns über dein Projekt reden.
-          </h2>
-          <p className="mt-6 font-serif text-body leading-[1.7] text-white/70">
-            Egal ob du schon weißt, was du brauchst, oder erst sortieren
-            willst, was möglich ist – schreib mir. Das erste Gespräch ist
-            kostenlos und unverbindlich. Innerhalb von 24 Stunden hast du eine
-            Antwort.
-          </p>
-          <div className="mt-8 flex justify-center">
-            <Button variant="primary" size="lg" href="/kontakt">
-              Projekt besprechen
-            </Button>
-          </div>
-          <p className="mt-4 font-serif text-[14px] text-white/60">
-            Oder direkt:{" "}
-            <a
-              href="mailto:info@klarteq.de"
-              className="text-accent hover:text-accent-hover hover:underline"
-            >
-              info@klarteq.de
-            </a>
-          </p>
+          <ScrollReveal>
+            <h2 className="text-h2 text-white">
+              Lass uns über dein Projekt reden.
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={80}>
+            <p className="mt-6 font-serif text-body leading-[1.7] text-white/70">
+              Egal ob du schon weißt, was du brauchst, oder erst sortieren
+              willst, was möglich ist – schreib mir. Das erste Gespräch ist
+              kostenlos und unverbindlich. Innerhalb von 24 Stunden hast du eine
+              Antwort.
+            </p>
+          </ScrollReveal>
+          <ScrollReveal delay={160}>
+            <div className="mt-8 flex justify-center">
+              <Button variant="primary" size="lg" href="/kontakt">
+                Projekt besprechen
+              </Button>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={220}>
+            <p className="mt-4 font-serif text-[14px] text-white/60">
+              Oder direkt:{" "}
+              <a
+                href="mailto:info@klarteq.de"
+                className="text-accent hover:text-accent-hover hover:underline"
+              >
+                info@klarteq.de
+              </a>
+            </p>
+          </ScrollReveal>
         </div>
       </section>
     </>
