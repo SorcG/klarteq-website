@@ -277,8 +277,77 @@ h1{font-family:'Manrope',sans-serif;font-size:clamp(28px,5vw,46px);font-weight:8
   <div class="card"><div style="font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--dm);margin-bottom:8px;font-weight:600">Wei&szlig;raum</div><p>Gro&szlig;z&uuml;gig. Sections: min. 80px Padding. Elemente nie quetschen.</p></div>
   <div class="card"><div style="font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--dm);margin-bottom:8px;font-weight:600">Ecken</div><p>8-12px border-radius. Buttons 8px, Cards 12px. Modern + nahbar.</p></div>
   <div class="card"><div style="font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--dm);margin-bottom:8px;font-weight:600">Schatten</div><p>0 1px 3px rgba(0,0,0,.06). Flat mit Hauch Tiefe. Kein Neumorphismus.</p></div>
-  <div class="card"><div style="font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--dm);margin-bottom:8px;font-weight:600">Animationen</div><p>Sanfte Fade-Ins (200-400ms). Dezente Hover-Transitions. Kein Bouncing.</p></div>
 </div>
+
+<!-- ══════ 5.5 MOTION ══════ -->
+<div class="sec">Motion &amp; Bewegung</div>
+<div class="sec-title">Motion-Strategie</div>
+<div class="sec-sub">Bewegung mit Absicht: choreografiert statt dekorativ, zielgerichtet statt beliebig.</div>
+
+<div class="card">
+  <div style="font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--dm);margin-bottom:14px;font-weight:600">Grundprinzipien</div>
+  <p><strong>1. Intentional, nicht dekorativ.</strong> Jede Bewegung hat einen Zweck: Aufmerksamkeit lenken, Hierarchie zeigen, Entdeckung erm&ouml;glichen. Bewegung nur zum &bdquo;Sch&ouml;ner machen&ldquo; vermeiden wir.</p>
+  <p style="margin-top:10px"><strong>2. Choreografiert, nicht zuf&auml;llig.</strong> Elemente erscheinen in festgelegter Reihenfolge mit definierten Verz&ouml;gerungen. Nie alles gleichzeitig.</p>
+  <p style="margin-top:10px"><strong>3. Ease-out bevorzugt.</strong> Alle Bewegungen nutzen ease-out oder cubic-bezier(0.16, 1, 0.3, 1). Niemals linear oder ease-in.</p>
+  <p style="margin-top:10px"><strong>4. Reduzierte Bewegung respektieren.</strong> Bei prefers-reduced-motion werden alle Scroll-Animationen abgeschaltet. Elemente erscheinen sofort in Zielposition.</p>
+</div>
+
+<div class="rg" style="margin-bottom:20px">
+  <div class="card">
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--acc);margin-bottom:8px;font-weight:600">Pattern 1 &mdash; Reveal</div>
+    <p>opacity: 0 &rarr; 1, translateY: 40px &rarr; 0. Dauer 700ms, ease-out. Trigger: 15% im Viewport.</p>
+  </div>
+  <div class="card">
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--acc);margin-bottom:8px;font-weight:600">Pattern 2 &mdash; Stagger-Reveal</div>
+    <p>Wie Reveal, aber mit 120ms Versatz pro Element. F&uuml;r Card-Grids, Listen, Aufz&auml;hlungen.</p>
+  </div>
+  <div class="card">
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--acc);margin-bottom:8px;font-weight:600">Pattern 3 &mdash; Scroll-Zoom</div>
+    <p>scale: 1.1 &rarr; 1.0 w&auml;hrend Element durch Viewport f&auml;hrt. F&uuml;r Hero-Bilder und Referenz-Screenshots.</p>
+  </div>
+  <div class="card">
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--acc);margin-bottom:8px;font-weight:600">Pattern 4 &mdash; Slide-In Horizontal</div>
+    <p>translateX: &minus;60px &rarr; 0 (oder +60px &rarr; 0), opacity: 0 &rarr; 1. F&uuml;r alternierende Sektionen.</p>
+  </div>
+  <div class="card">
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--acc);margin-bottom:8px;font-weight:600">Pattern 5 &mdash; Text-Split-Reveal</div>
+    <p>Jedes Wort: opacity 0 &rarr; 1, translateY 12px &rarr; 0. Versatz pro Wort: 80ms. F&uuml;r Hero-H1 und Statement-Sektionen.</p>
+  </div>
+  <div class="card">
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--acc);margin-bottom:8px;font-weight:600">Pattern 6 &mdash; Sticky-Scroll</div>
+    <p>position: sticky. Element bleibt stehen, Inhalt daneben wechselt. F&uuml;r Prozess-Sektionen.</p>
+  </div>
+  <div class="card" style="grid-column:1 / -1">
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--acc);margin-bottom:8px;font-weight:600">Pattern 7 &mdash; Pinned-Progress</div>
+    <p>Hintergrund transformiert beim Scrollen (scale, opacity, Farbe). F&uuml;r Kernmomente der Seite.</p>
+  </div>
+</div>
+
+<div class="rg" style="margin-bottom:20px">
+  <div class="card">
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--dm);margin-bottom:10px;font-weight:600">Timing-Regeln</div>
+    <p><strong>Mikro-Animationen:</strong> 200&ndash;300ms<br>
+    <strong>Scroll-Reveals (Standard):</strong> 600&ndash;800ms<br>
+    <strong>Dramatische Entrances:</strong> 900&ndash;1200ms<br>
+    <strong>Stagger-Versatz:</strong> 100&ndash;150ms<br>
+    <strong>Niemals</strong> l&auml;nger als 1200ms.</p>
+  </div>
+  <div class="card">
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--dm);margin-bottom:10px;font-weight:600">Performance-Regeln</div>
+    <p><strong>Erlaubt zu animieren:</strong> opacity, transform (translate, scale, rotate).<br>
+    <strong>Vermieden:</strong> width, height, top/left.</p>
+    <p style="margin-top:10px"><strong>Mobile-Anpassung:</strong> Dauern um 20% reduzieren, translateY-Distanzen halbieren (20px statt 40px), keine Sticky-Scroll-Effekte auf Mobile.</p>
+  </div>
+</div>
+
+<div class="rule dont" style="margin-bottom:20px"><h4>&#10007; Verboten</h4><ul>
+  <li>Keine Bounce-Effekte (au&szlig;er Interaktions-Feedback)</li>
+  <li>Keine Spin-/Rotate-Animationen auf Dekor-Elementen</li>
+  <li>Keine Dauerschleifen-Animationen (au&szlig;er Hero-Gradient)</li>
+  <li>Keine Mouse-Tracking-Effekte</li>
+  <li>Keine Overscroll-Effekte</li>
+  <li>Keine Videos im Hintergrund</li>
+</ul></div>
 
 <!-- ══════ 6. DO'S & DON'TS ══════ -->
 <div class="sec">Abschnitt 6</div>
