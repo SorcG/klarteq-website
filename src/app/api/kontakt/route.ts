@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 interface ContactBody {
@@ -16,6 +14,16 @@ interface ContactBody {
 
 export async function POST(req: NextRequest) {
   try {
+    if (!process.env.RESEND_API_KEY) {
+      console.error("RESEND_API_KEY fehlt");
+      return NextResponse.json(
+        { error: "Server configuration error" },
+        { status: 500 },
+      );
+    }
+
+    const resend = new Resend(process.env.RESEND_API_KEY);
+
     const body = (await req.json()) as ContactBody;
     const {
       name,
@@ -44,11 +52,6 @@ export async function POST(req: NextRequest) {
         { error: "Ungültige E-Mail-Adresse" },
         { status: 400 }
       );
-    }
-
-    if (!process.env.RESEND_API_KEY) {
-      console.error("RESEND_API_KEY fehlt");
-      return NextResponse.json({ error: "Serverfehler" }, { status: 500 });
     }
 
     const { error } = await resend.emails.send({
