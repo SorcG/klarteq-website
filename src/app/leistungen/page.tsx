@@ -362,7 +362,7 @@ export default function LeistungenPage() {
             unverbindlich. Schreib mir, und wir finden heraus, ob und wie ich
             dir helfen kann.
           </p>
-          <div className="leistung-reveal mt-8 flex justify-center">
+          <div className="leistung-reveal-side mt-8 flex justify-center">
             <Button variant="primary" size="lg" href="/kontakt">
               Projekt besprechen
             </Button>
