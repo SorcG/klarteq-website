@@ -13,6 +13,7 @@ import FAQ from "./components/FAQ";
 import HeroContent from "./components/HeroContent";
 import ScrollReveal from "./components/ScrollReveal";
 import StaggerReveal from "./components/StaggerReveal";
+import AboutSlideIn from "./components/AboutSlideIn";
 import ApproachSection from "./components/ApproachSection";
 import { localBusinessSchema } from "./lib/schema";
 
@@ -364,10 +365,11 @@ export default function HomePage() {
       </section>
 
       {/* 6. Über-mich-Kurzfassung */}
-      <section className="bg-white">
+      <section className="about-section bg-white">
+        <AboutSlideIn />
         <div className="mx-auto max-w-[1200px] px-6 py-20 md:py-28">
           <div className="grid gap-12 md:grid-cols-5 md:items-center">
-            <ScrollReveal className="md:col-span-2">
+            <ScrollReveal className="about-image md:col-span-2">
               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-card">
                 <Image
                   src="/images/luca1.jpg"
@@ -379,7 +381,7 @@ export default function HomePage() {
                 />
               </div>
             </ScrollReveal>
-            <ScrollReveal delay={120} className="md:col-span-3">
+            <ScrollReveal delay={120} className="about-text md:col-span-3">
               <Kicker>Wer baut hier</Kicker>
               <h2 className="text-h2">
                 Luca Sorci – dein Webentwickler aus Gütersloh.
