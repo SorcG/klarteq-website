@@ -13,7 +13,7 @@ import Button from "./components/Button";
 import Card from "./components/Card";
 import Kicker from "./components/Kicker";
 import FAQ from "./components/FAQ";
-import HeroCounters from "./components/HeroCounters";
+import HeroContent from "./components/HeroContent";
 import ScrollReveal from "./components/ScrollReveal";
 import { localBusinessSchema } from "./lib/schema";
 
@@ -165,7 +165,7 @@ export default function HomePage() {
           __html: JSON.stringify(localBusinessSchema),
         }}
       />
-      {/* 1. Hero – bleibt mit bestehender fade-in-up Animation */}
+      {/* 1. Hero */}
       <section className="relative overflow-hidden bg-powder">
         <div
           aria-hidden="true"
@@ -226,50 +226,7 @@ export default function HomePage() {
             animationDelay: "-12s",
           }}
         />
-        <div className="relative mx-auto max-w-[1200px] px-6 py-24 md:py-32">
-          <div
-            className="opacity-0 animate-fade-in-up"
-            style={{ animationDelay: "100ms" }}
-          >
-            <Kicker>Webentwicklung · Ostwestfalen</Kicker>
-          </div>
-          <h1
-            className="max-w-[720px] text-h1 font-sora opacity-0 animate-fade-in-up"
-            style={{ animationDelay: "200ms" }}
-          >
-            Websites, die für dein Geschäft arbeiten.
-          </h1>
-          <p
-            className="mt-6 max-w-[560px] font-serif text-[18px] leading-[1.65] text-muted opacity-0 animate-fade-in-up"
-            style={{ animationDelay: "300ms" }}
-          >
-            Ich baue schnelle, sichtbare Websites für lokale Unternehmen in
-            Ostwestfalen. Keine Visitenkarten. Werkzeuge.
-          </p>
-          <div
-            className="mt-8 flex flex-wrap items-center gap-6 opacity-0 animate-fade-in-up"
-            style={{ animationDelay: "400ms" }}
-          >
-            <Button variant="primary" size="lg" href="/kontakt">
-              Projekt besprechen
-            </Button>
-            <Button variant="link" href="/leistungen">
-              Leistungen ansehen →
-            </Button>
-          </div>
-          <p
-            className="mt-6 font-serif text-[14px] text-muted opacity-0 animate-fade-in-up"
-            style={{ animationDelay: "500ms" }}
-          >
-            Aus Gütersloh · Für Unternehmen in OWL
-          </p>
-          <div
-            className="mt-6 opacity-0 animate-fade-in-up"
-            style={{ animationDelay: "600ms" }}
-          >
-            <HeroCounters />
-          </div>
-        </div>
+        <HeroContent />
       </section>
 
       {/* 2. Problem */}

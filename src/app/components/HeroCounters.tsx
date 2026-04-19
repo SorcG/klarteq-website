@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Zap, Gauge, Smartphone, type LucideIcon } from 'lucide-react';
 
 interface Counter {
@@ -18,13 +18,11 @@ const COUNTERS: Counter[] = [
   { icon: Smartphone, target: 100, duration: 1400, suffix: '%', label: 'mobil' },
 ];
 
-export default function HeroCounters() {
-  const ref = useRef<HTMLDivElement>(null);
+export default function HeroCounters({ active = false }: { active?: boolean }) {
   const [values, setValues] = useState<number[]>(() => COUNTERS.map(() => 0));
 
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
+    if (!active) return;
 
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduced) {
@@ -32,47 +30,46 @@ export default function HeroCounters() {
       return;
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (!entries[0].isIntersecting) return;
-        observer.disconnect();
-        COUNTERS.forEach((counter, idx) => {
-          const start = performance.now();
-          const step = (now: number) => {
-            const progress = Math.min((now - start) / counter.duration, 1);
-            const val = Math.floor(progress * counter.target);
-            setValues((prev) => {
-              if (prev[idx] === val) return prev;
-              const next = [...prev];
-              next[idx] = val;
-              return next;
-            });
-            if (progress < 1) requestAnimationFrame(step);
-            else {
-              setValues((prev) => {
-                const next = [...prev];
-                next[idx] = counter.target;
-                return next;
-              });
-            }
-          };
-          requestAnimationFrame(step);
+    const rafIds: number[] = [];
+    COUNTERS.forEach((counter, idx) => {
+      const start = performance.now();
+      const tick = (now: number) => {
+        const progress = Math.min((now - start) / counter.duration, 1);
+        const val = Math.floor(progress * counter.target);
+        setValues((prev) => {
+          if (prev[idx] === val) return prev;
+          const next = [...prev];
+          next[idx] = val;
+          return next;
         });
-      },
-      { threshold: 0.3 },
-    );
+        if (progress < 1) {
+          rafIds[idx] = requestAnimationFrame(tick);
+        } else {
+          setValues((prev) => {
+            const next = [...prev];
+            next[idx] = counter.target;
+            return next;
+          });
+        }
+      };
+      rafIds[idx] = requestAnimationFrame(tick);
+    });
 
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
+    return () => rafIds.forEach((id) => cancelAnimationFrame(id));
+  }, [active]);
 
   return (
-    <div
-      ref={ref}
-      className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8"
-    >
+    <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
       {COUNTERS.map(({ icon: Icon, prefix = '', suffix, label }, idx) => (
-        <div key={label} className="flex items-center gap-3">
+        <div
+          key={label}
+          className="flex items-center gap-3"
+          style={{
+            opacity: active ? 1 : 0,
+            transform: active ? 'translateY(0)' : 'translateY(12px)',
+            transition: `opacity 500ms ease-out ${idx * 100}ms, transform 500ms ease-out ${idx * 100}ms`,
+          }}
+        >
           <span
             className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[8px]"
             style={{ backgroundColor: 'rgba(91,140,111,0.08)' }}
