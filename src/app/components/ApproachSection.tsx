@@ -44,7 +44,8 @@ export default function ApproachSection() {
               ease: 'power3.out',
               scrollTrigger: {
                 trigger: item,
-                start: 'top 65%',
+                start: 'top 75%',
+                end: 'top 25%',
                 toggleActions: 'play none none reverse',
               },
             },
@@ -68,7 +69,8 @@ export default function ApproachSection() {
             scrollTrigger: {
               trigger: ref.current,
               start: 'top 80%',
-              toggleActions: 'play none none none',
+              end: 'top 10%',
+              toggleActions: 'play none none reverse',
             },
           },
         );
