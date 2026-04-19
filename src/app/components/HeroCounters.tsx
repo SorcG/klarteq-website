@@ -61,15 +61,7 @@ export default function HeroCounters({ active = false }: { active?: boolean }) {
   return (
     <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
       {COUNTERS.map(({ icon: Icon, prefix = '', suffix, label }, idx) => (
-        <div
-          key={label}
-          className="flex items-center gap-3"
-          style={{
-            opacity: active ? 1 : 0,
-            transform: active ? 'translateY(0)' : 'translateY(12px)',
-            transition: `opacity 500ms ease-out ${idx * 100}ms, transform 500ms ease-out ${idx * 100}ms`,
-          }}
-        >
+        <div key={label} className="flex items-center gap-3">
           <span
             className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[8px]"
             style={{ backgroundColor: 'rgba(91,140,111,0.08)' }}
