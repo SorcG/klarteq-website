@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import {
   Clock,
   Search,
@@ -14,6 +13,7 @@ import HeroContent from "./components/HeroContent";
 import ScrollReveal from "./components/ScrollReveal";
 import StaggerReveal from "./components/StaggerReveal";
 import ApproachSection from "./components/ApproachSection";
+import AboutSection from "./components/AboutSection";
 import { localBusinessSchema } from "./lib/schema";
 
 export const metadata: Metadata = {
@@ -364,49 +364,7 @@ export default function HomePage() {
       </section>
 
       {/* 6. Über-mich-Kurzfassung */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-[1200px] px-6 py-20 md:py-28">
-          <div className="grid gap-12 md:grid-cols-5 md:items-center">
-            <ScrollReveal className="md:col-span-2">
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-card">
-                <Image
-                  src="/images/luca1.jpg"
-                  alt="Luca Sorci, Webentwickler aus Gütersloh"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 40vw"
-                  priority={false}
-                />
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={120} className="md:col-span-3">
-              <Kicker>Wer baut hier</Kicker>
-              <h2 className="text-h2">
-                Luca Sorci – dein Webentwickler aus Gütersloh.
-              </h2>
-              <p className="mt-6 font-serif text-body leading-[1.7] text-muted">
-                Ich bin Luca, Entwickler aus Gütersloh. Hauptberuflich arbeite
-                ich im E-Commerce, einer Welt, in der jede Sekunde Ladezeit
-                und jeder Klick gemessen wird. Diese Erfahrung bringe ich zu
-                lokalen Unternehmen, die bisher mit Websites arbeiten, die
-                mehr schaden als nützen – zu langsam, nicht mobil-optimiert,
-                bei Google unsichtbar.
-              </p>
-              <p className="mt-4 font-serif text-body leading-[1.7] text-muted">
-                Mit modernen Entwicklungstools baue ich in Tagen, wofür
-                klassische Agenturen Wochen brauchen. Keine Templates. Keine
-                Standardlösungen. Sondern Websites, die für dein Geschäft
-                arbeiten.
-              </p>
-              <div className="mt-6">
-                <Button variant="link" href="/ueber-mich">
-                  Mehr über mich →
-                </Button>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
+      <AboutSection />
 
       {/* 7. FAQ */}
       <section className="bg-powder">
