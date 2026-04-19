@@ -45,7 +45,7 @@ export default function ApproachSection() {
               scrollTrigger: {
                 trigger: item,
                 start: 'top 65%',
-                toggleActions: 'play none none none',
+                toggleActions: 'play none none reverse',
               },
             },
           );
