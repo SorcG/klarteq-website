@@ -4,6 +4,7 @@ import Button from "../components/Button";
 import Card from "../components/Card";
 import Kicker from "../components/Kicker";
 import FAQ from "../components/FAQ";
+import LeistungenReveals from "../components/LeistungenReveals";
 import {
   starterServiceSchema,
   businessServiceSchema,
@@ -210,14 +211,16 @@ export default function LeistungenPage() {
           __html: JSON.stringify(premiumServiceSchema),
         }}
       />
+      <LeistungenReveals />
+
       {/* 7.2 Hero */}
       <section className="bg-powder">
         <div className="mx-auto max-w-[1200px] px-6 py-24 md:py-28">
-          <Kicker>Leistungen &amp; Preise</Kicker>
-          <h1 className="max-w-[760px] text-h1 font-sora">
+          <Kicker className="leistung-reveal">Leistungen &amp; Preise</Kicker>
+          <h1 className="leistung-reveal max-w-[760px] text-h1 font-sora">
             Leistungen &amp; Preise
           </h1>
-          <p className="mt-6 max-w-[680px] font-serif text-[18px] leading-[1.65] text-muted">
+          <p className="leistung-reveal mt-6 max-w-[680px] font-serif text-[18px] leading-[1.65] text-muted">
             Drei Pakete, klare Preise, keine Überraschungen. Wähle das Paket,
             das zu deinem Unternehmen passt – oder lass uns im Erstgespräch
             gemeinsam herausfinden, welches es ist.
@@ -235,7 +238,7 @@ export default function LeistungenPage() {
           <div className="mx-auto max-w-[1200px] px-6 py-20 md:py-24">
             <Card
               highlighted={pkg.highlighted}
-              className="mx-auto max-w-[800px] p-8 md:p-12"
+              className="leistung-reveal mx-auto max-w-[800px] p-8 md:p-12"
             >
               <h2 className="text-h2">{pkg.name}</h2>
               <p className="mt-6 font-mono text-[36px] font-medium leading-none text-primary">
@@ -268,7 +271,7 @@ export default function LeistungenPage() {
       {/* 7.4 Wartungspaket */}
       <section className="bg-powder">
         <div className="mx-auto max-w-[1200px] px-6 py-20 md:py-24">
-          <Card className="mx-auto max-w-[800px] p-8 md:p-12">
+          <Card className="leistung-reveal mx-auto max-w-[800px] p-8 md:p-12">
             <h2 className="text-h2">
               Wartungspaket · Optional zu jedem Paket
             </h2>
@@ -303,11 +306,11 @@ export default function LeistungenPage() {
       {/* 7.5 Prozess */}
       <section className="bg-white">
         <div className="mx-auto max-w-[1200px] px-6 py-20 md:py-28">
-          <Kicker>Ablauf</Kicker>
-          <h2 className="max-w-[760px] text-h2">
+          <Kicker className="leistung-reveal">Ablauf</Kicker>
+          <h2 className="leistung-reveal max-w-[760px] text-h2">
             So läuft ein Projekt bei mir ab.
           </h2>
-          <p className="mt-6 max-w-[760px] font-serif text-body leading-[1.7] text-muted">
+          <p className="leistung-reveal mt-6 max-w-[760px] font-serif text-body leading-[1.7] text-muted">
             Jedes Projekt folgt einem klaren Ablauf. Damit du weißt, was wann
             passiert, und dich darauf verlassen kannst.
           </p>
@@ -316,7 +319,7 @@ export default function LeistungenPage() {
             {PROCESS_STEPS.map((step, idx) => (
               <li
                 key={step.title}
-                className={`relative ${
+                className={`leistung-reveal relative ${
                   idx === PROCESS_STEPS.length - 1 ? "" : "pb-10"
                 }`}
               >
@@ -337,11 +340,11 @@ export default function LeistungenPage() {
       {/* 7.6 FAQ */}
       <section className="bg-powder">
         <div className="mx-auto max-w-[1200px] px-6 py-20 md:py-28">
-          <Kicker>Häufige Fragen</Kicker>
-          <h2 className="max-w-[760px] text-h2">
+          <Kicker className="leistung-reveal">Häufige Fragen</Kicker>
+          <h2 className="leistung-reveal max-w-[760px] text-h2">
             Was Kunden zu den Paketen fragen.
           </h2>
-          <div className="mt-12 max-w-[860px]">
+          <div className="leistung-reveal mt-12 max-w-[860px]">
             <FAQ items={FAQ_ITEMS} />
           </div>
         </div>
@@ -350,16 +353,16 @@ export default function LeistungenPage() {
       {/* 7.7 Abschluss-CTA */}
       <section className="bg-dark">
         <div className="mx-auto max-w-[720px] px-6 py-24 text-center">
-          <h2 className="text-h2 text-white">
+          <h2 className="leistung-reveal text-h2 text-white">
             Noch Fragen? Oder direkt starten?
           </h2>
-          <p className="mt-6 font-serif text-body leading-[1.7] text-white/70">
+          <p className="leistung-reveal mt-6 font-serif text-body leading-[1.7] text-white/70">
             Egal, ob du genau weißt, was du willst, oder gerade erst anfängst,
             darüber nachzudenken – das Erstgespräch ist kostenlos und
             unverbindlich. Schreib mir, und wir finden heraus, ob und wie ich
             dir helfen kann.
           </p>
-          <div className="mt-8 flex justify-center">
+          <div className="leistung-reveal mt-8 flex justify-center">
             <Button variant="primary" size="lg" href="/kontakt">
               Projekt besprechen
             </Button>
