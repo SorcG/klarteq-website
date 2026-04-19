@@ -41,6 +41,17 @@ export default function AboutSlideIn() {
           },
         },
       );
+
+      gsap.to('.about-image', {
+        y: -40,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.about-section',
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 1.5,
+        },
+      });
     });
 
     return () => ctx.revert();
