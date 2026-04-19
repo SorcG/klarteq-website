@@ -27,6 +27,14 @@ export default function Header() {
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
+  const handleNavClick =
+    (href: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
+      if (isActive(href)) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    };
+
   return (
     <>
       <header className="sticky top-0 z-40 border-b border-border bg-white/90 backdrop-blur-sm">
@@ -42,6 +50,7 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  onClick={handleNavClick(link.href)}
                   className="relative font-sora text-[14px] font-medium text-primary transition-colors hover:text-accent"
                 >
                   {link.label}
@@ -104,7 +113,10 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                onClick={() => setOpen(false)}
+                onClick={(e) => {
+                  setOpen(false);
+                  handleNavClick(link.href)(e);
+                }}
                 className="w-full max-w-[280px] rounded-btn py-4 text-center font-sora text-[20px] font-medium text-primary transition-colors hover:text-accent"
               >
                 {link.label}
