@@ -4,9 +4,6 @@ import {
   Clock,
   Search,
   Smartphone,
-  Zap,
-  Gauge,
-  Code2,
   type LucideIcon,
 } from "lucide-react";
 import Button from "./components/Button";
@@ -15,6 +12,8 @@ import Kicker from "./components/Kicker";
 import FAQ from "./components/FAQ";
 import HeroContent from "./components/HeroContent";
 import ScrollReveal from "./components/ScrollReveal";
+import StaggerReveal from "./components/StaggerReveal";
+import ApproachSection from "./components/ApproachSection";
 import { localBusinessSchema } from "./lib/schema";
 
 export const metadata: Metadata = {
@@ -50,24 +49,6 @@ const PROBLEM_CARDS: { icon: LucideIcon; title: string; text: string }[] = [
     icon: Smartphone,
     title: "Mobil unbrauchbar",
     text: "Über 70 % deiner Besucher kommen übers Smartphone. Wenn die Seite dort bricht, ist der Kunde weg – bevor du überhaupt wusstest, dass er da war.",
-  },
-];
-
-const APPROACH_BLOCKS: { icon: LucideIcon; title: string; text: string }[] = [
-  {
-    icon: Zap,
-    title: "Tempo, das Agenturen nicht liefern können",
-    text: "Ich arbeite mit modernen, KI-gestützten Entwicklungstools. Das heißt: Was in einer klassischen Agentur vier Wochen dauert, baue ich in vier Tagen. Gleiche Qualität, andere Geschwindigkeit. Das spart dir Zeit, und weil meine Prozesse schlanker sind, auch Geld.",
-  },
-  {
-    icon: Gauge,
-    title: "Performance statt Dekoration",
-    text: "Ich baue keine Seiten, die nur schön aussehen. Ich baue Seiten, die unter 2 Sekunden laden, die Google versteht, und die auf jedem Handy funktionieren. Lighthouse-Score 90+ ist bei mir Standard, nicht Upgrade.",
-  },
-  {
-    icon: Code2,
-    title: "Keine Templates",
-    text: "Ich arbeite nicht mit Baukästen. Jede Seite wird als Code für dein Unternehmen geschrieben. Das klingt nach Mehraufwand – ist aber genau das, was deine Seite schneller, sichtbarer und langfristig wartbarer macht.",
   },
 ];
 
@@ -250,78 +231,29 @@ export default function HomePage() {
               landen, weil der eine mobile Seite hat, die wirklich funktioniert.
             </p>
           </ScrollReveal>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {PROBLEM_CARDS.map(({ icon: Icon, title, text }, idx) => (
-              <ScrollReveal key={title} delay={240 + idx * 80}>
-                <Card>
-                  <div
-                    className="flex h-12 w-12 items-center justify-center rounded-card bg-accent-light"
-                    aria-hidden="true"
-                  >
-                    <Icon size={24} className="text-primary" />
-                  </div>
-                  <h3 className="mt-4 font-sora text-[20px] font-bold text-primary">
-                    {title}
-                  </h3>
-                  <p className="mt-2 font-serif text-[16px] leading-[1.7] text-muted">
-                    {text}
-                  </p>
-                </Card>
-              </ScrollReveal>
+          <StaggerReveal className="mt-12 grid gap-6 md:grid-cols-3">
+            {PROBLEM_CARDS.map(({ icon: Icon, title, text }) => (
+              <Card key={title} className="stagger-item">
+                <div
+                  className="flex h-12 w-12 items-center justify-center rounded-card bg-accent-light"
+                  aria-hidden="true"
+                >
+                  <Icon size={24} className="text-primary" />
+                </div>
+                <h3 className="mt-4 font-sora text-[20px] font-bold text-primary">
+                  {title}
+                </h3>
+                <p className="mt-2 font-serif text-[16px] leading-[1.7] text-muted">
+                  {text}
+                </p>
+              </Card>
             ))}
-          </div>
+          </StaggerReveal>
         </div>
       </section>
 
       {/* 3. So arbeite ich */}
-      <section className="bg-powder">
-        <div className="mx-auto max-w-[1200px] px-6 py-20 md:py-28">
-          <ScrollReveal>
-            <Kicker>Mein Ansatz</Kicker>
-          </ScrollReveal>
-          <ScrollReveal delay={80}>
-            <h2 className="max-w-[760px] text-h2">
-              Wie ich arbeite – und warum das anders ist.
-            </h2>
-          </ScrollReveal>
-          <ScrollReveal delay={160}>
-            <p className="mt-6 max-w-[760px] font-serif text-body leading-[1.7] text-muted">
-              Ich komme nicht aus der klassischen Webdesign-Welt. Hauptberuflich
-              baue ich im E-Commerce mit – einer Branche, in der jede Sekunde
-              Ladezeit und jeder Klick gemessen wird. Dort lernst du sehr
-              schnell, was eine Website leisten muss, um Umsatz zu machen.
-              Dieses Denken bringe ich in jedes Projekt.
-            </p>
-          </ScrollReveal>
-          <div className="mt-16 flex flex-col gap-14">
-            {APPROACH_BLOCKS.map(({ icon: Icon, title, text }, idx) => {
-              const reverse = idx % 2 === 1;
-              return (
-                <ScrollReveal key={title} delay={idx * 100}>
-                  <div
-                    className={`flex flex-col gap-6 md:flex-row md:items-center md:gap-12 ${
-                      reverse ? "md:flex-row-reverse" : ""
-                    }`}
-                  >
-                    <div
-                      className="flex h-14 w-14 shrink-0 items-center justify-center rounded-card bg-accent-light"
-                      aria-hidden="true"
-                    >
-                      <Icon size={28} className="text-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-sora text-h3 text-primary">{title}</h3>
-                      <p className="mt-3 max-w-[640px] font-serif text-body leading-[1.7] text-muted">
-                        {text}
-                      </p>
-                    </div>
-                  </div>
-                </ScrollReveal>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <ApproachSection />
 
       {/* 4. Leistungen-Teaser */}
       <section className="bg-white">
@@ -341,32 +273,34 @@ export default function HomePage() {
               gemeinsam herausfinden, welches es ist.
             </p>
           </ScrollReveal>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {PACKAGES.map((pkg, idx) => (
-              <ScrollReveal key={pkg.name} delay={240 + idx * 80}>
-                <Card highlighted={pkg.highlighted}>
-                  <h3 className="font-sora text-h3 text-primary">{pkg.name}</h3>
-                  <p className="mt-4 font-mono text-price text-primary">
-                    {pkg.price}
-                  </p>
-                  <p className="mt-1 font-serif text-[13px] italic text-muted">
-                    Einführungspreis · limitiert
-                  </p>
-                  <p className="mt-5 font-serif text-[16px] leading-[1.7] text-muted">
-                    {pkg.description}
-                  </p>
-                  <p className="mt-4 font-serif text-[15px] italic leading-[1.65] text-muted">
-                    {pkg.audience}
-                  </p>
-                  <div className="mt-6">
-                    <Button variant="link" href={pkg.href}>
-                      Details ansehen →
-                    </Button>
-                  </div>
-                </Card>
-              </ScrollReveal>
+          <StaggerReveal className="mt-12 grid gap-6 md:grid-cols-3">
+            {PACKAGES.map((pkg) => (
+              <Card
+                key={pkg.name}
+                highlighted={pkg.highlighted}
+                className="stagger-item"
+              >
+                <h3 className="font-sora text-h3 text-primary">{pkg.name}</h3>
+                <p className="mt-4 font-mono text-price text-primary">
+                  {pkg.price}
+                </p>
+                <p className="mt-1 font-serif text-[13px] italic text-muted">
+                  Einführungspreis · limitiert
+                </p>
+                <p className="mt-5 font-serif text-[16px] leading-[1.7] text-muted">
+                  {pkg.description}
+                </p>
+                <p className="mt-4 font-serif text-[15px] italic leading-[1.65] text-muted">
+                  {pkg.audience}
+                </p>
+                <div className="mt-6">
+                  <Button variant="link" href={pkg.href}>
+                    Details ansehen →
+                  </Button>
+                </div>
+              </Card>
             ))}
-          </div>
+          </StaggerReveal>
           <ScrollReveal delay={80}>
             <p className="mt-10 text-center font-serif text-[15px] text-muted">
               Alle Preise sind Endpreise. Ich bin Kleinunternehmer nach §19 UStG
@@ -399,35 +333,33 @@ export default function HomePage() {
               ersten Klarteq-Kunden live sind.
             </p>
           </ScrollReveal>
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {REFERENCES.map((ref, idx) => (
-              <ScrollReveal key={ref.title} delay={240 + idx * 100}>
-                <Card>
-                  <div
-                    role="img"
-                    aria-label={ref.alt}
-                    className="mb-6 flex aspect-[16/9] w-full items-center justify-center rounded-card border border-border bg-accent-light"
-                  >
-                    <span className="font-mono text-[12px] uppercase tracking-wider text-muted">
-                      Screenshot folgt
-                    </span>
-                  </div>
-                  <h3 className="font-sora text-h3 text-primary">{ref.title}</h3>
-                  <p className="mt-2 font-mono text-[12px] text-muted">
-                    {ref.meta}
-                  </p>
-                  <p className="mt-4 font-serif text-[16px] leading-[1.7] text-muted">
-                    {ref.description}
-                  </p>
-                  <div className="mt-6">
-                    <Button variant="link" href={ref.href}>
-                      Zur Website →
-                    </Button>
-                  </div>
-                </Card>
-              </ScrollReveal>
+          <StaggerReveal className="mt-12 grid gap-6 md:grid-cols-2">
+            {REFERENCES.map((ref) => (
+              <Card key={ref.title} className="stagger-item">
+                <div
+                  role="img"
+                  aria-label={ref.alt}
+                  className="mb-6 flex aspect-[16/9] w-full items-center justify-center rounded-card border border-border bg-accent-light"
+                >
+                  <span className="font-mono text-[12px] uppercase tracking-wider text-muted">
+                    Screenshot folgt
+                  </span>
+                </div>
+                <h3 className="font-sora text-h3 text-primary">{ref.title}</h3>
+                <p className="mt-2 font-mono text-[12px] text-muted">
+                  {ref.meta}
+                </p>
+                <p className="mt-4 font-serif text-[16px] leading-[1.7] text-muted">
+                  {ref.description}
+                </p>
+                <div className="mt-6">
+                  <Button variant="link" href={ref.href}>
+                    Zur Website →
+                  </Button>
+                </div>
+              </Card>
             ))}
-          </div>
+          </StaggerReveal>
         </div>
       </section>
 
