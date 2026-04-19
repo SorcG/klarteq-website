@@ -36,17 +36,16 @@ export default function ApproachSection() {
         gsap.utils.toArray<HTMLElement>('.approach-item').forEach((item) => {
           gsap.fromTo(
             item,
-            { opacity: 0.25, x: 24 },
+            { opacity: 0.15, x: 24 },
             {
               opacity: 1,
               x: 0,
-              duration: 0.7,
-              ease: 'power3.out',
+              ease: 'none',
               scrollTrigger: {
                 trigger: item,
-                start: 'top 75%',
-                end: 'top 25%',
-                toggleActions: 'play none none reverse',
+                start: 'top 85%',
+                end: 'top 40%',
+                scrub: 0.5,
               },
             },
           );
@@ -57,23 +56,23 @@ export default function ApproachSection() {
 
     mm.add('(max-width: 767px)', () => {
       const ctx = gsap.context(() => {
-        gsap.fromTo(
-          '.approach-item',
-          { opacity: 0, y: 40 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.7,
-            ease: 'power3.out',
-            stagger: 0.15,
-            scrollTrigger: {
-              trigger: ref.current,
-              start: 'top 80%',
-              end: 'top 10%',
-              toggleActions: 'play none none reverse',
+        gsap.utils.toArray<HTMLElement>('.approach-item').forEach((item) => {
+          gsap.fromTo(
+            item,
+            { opacity: 0, y: 40 },
+            {
+              opacity: 1,
+              y: 0,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: item,
+                start: 'top 90%',
+                end: 'top 55%',
+                scrub: 0.5,
+              },
             },
-          },
-        );
+          );
+        });
       }, ref);
       return () => ctx.revert();
     });

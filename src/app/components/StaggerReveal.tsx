@@ -15,23 +15,25 @@ export default function StaggerReveal({ children, className }: Props) {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const ctx = gsap.context(() => {
-      gsap.fromTo(
-        '.stagger-item',
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.7,
-          ease: 'power3.out',
-          stagger: 0.15,
-          scrollTrigger: {
-            trigger: ref.current,
-            start: 'top 80%',
-            end: 'top 10%',
-            toggleActions: 'play none none reverse',
-          },
-        },
-      );
+      gsap.utils
+        .toArray<Element>('.stagger-item', ref.current)
+        .forEach((item) => {
+          gsap.fromTo(
+            item,
+            { opacity: 0, y: 40 },
+            {
+              opacity: 1,
+              y: 0,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: item as Element,
+                start: 'top 90%',
+                end: 'top 55%',
+                scrub: 0.5,
+              },
+            },
+          );
+        });
 
       ScrollTrigger.refresh();
     }, ref);
