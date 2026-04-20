@@ -11,6 +11,7 @@ import Card from "./components/Card";
 import Kicker from "./components/Kicker";
 import FAQ from "./components/FAQ";
 import HeroContent from "./components/HeroContent";
+import HeroMeshBg from "./components/HeroMeshBg";
 import ScrollReveal from "./components/ScrollReveal";
 import StaggerReveal from "./components/StaggerReveal";
 import AboutSlideIn from "./components/AboutSlideIn";
@@ -149,65 +150,7 @@ export default function HomePage() {
       />
       {/* 1. Hero */}
       <section className="relative overflow-hidden bg-powder">
-        <div
-          aria-hidden="true"
-          className="float-blob float-blob-1 pointer-events-none absolute"
-          style={{
-            top: "-80px",
-            left: "-60px",
-            width: "520px",
-            height: "520px",
-            background: "radial-gradient(circle, rgba(91,140,111,0.7), transparent 70%)",
-            filter: "blur(55px)",
-            borderRadius: "50%",
-            animationDuration: "22s",
-          }}
-        />
-        <div
-          aria-hidden="true"
-          className="float-blob float-blob-2 pointer-events-none absolute"
-          style={{
-            top: "-100px",
-            right: "-60px",
-            width: "480px",
-            height: "480px",
-            background: "radial-gradient(circle, rgba(55,65,81,0.18), transparent 70%)",
-            filter: "blur(70px)",
-            borderRadius: "50%",
-            animationDuration: "26s",
-            animationDelay: "-8s",
-          }}
-        />
-        <div
-          aria-hidden="true"
-          className="float-blob float-blob-3 pointer-events-none absolute"
-          style={{
-            top: "35%",
-            left: "40%",
-            width: "340px",
-            height: "340px",
-            background: "radial-gradient(circle, rgba(91,140,111,0.6), transparent 65%)",
-            filter: "blur(45px)",
-            borderRadius: "50%",
-            animationDuration: "18s",
-            animationDelay: "-5s",
-          }}
-        />
-        <div
-          aria-hidden="true"
-          className="float-blob float-blob-4 pointer-events-none absolute"
-          style={{
-            bottom: "-120px",
-            right: "10%",
-            width: "500px",
-            height: "500px",
-            background: "radial-gradient(circle, rgba(91,140,111,0.65), transparent 70%)",
-            filter: "blur(50px)",
-            borderRadius: "50%",
-            animationDuration: "20s",
-            animationDelay: "-12s",
-          }}
-        />
+        <HeroMeshBg />
         <HeroContent />
       </section>
 
