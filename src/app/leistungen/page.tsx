@@ -51,7 +51,7 @@ const PACKAGES: Package[] = [
       "Übergabe inklusive Einweisung per E-Mail",
     ],
     audience:
-      "Du hast noch keine Website, oder deine bisherige ist 10 Jahre alt und peinlich? Du willst einen klaren, seriösen Online-Auftritt, der deine Kontaktdaten, dein Angebot und deine Referenzen zeigt – mehr nicht? Dann ist Starter genau richtig.",
+      "Du hast noch keine Website, oder deine bisherige ist veraltet. Du willst einen klaren, seriösen Online-Auftritt – egal ob du ein Café betreibst, als Therapeut arbeitest oder als Handwerker. Dann ist Starter genau richtig.",
     highlighted: false,
   },
   {
@@ -73,7 +73,7 @@ const PACKAGES: Package[] = [
       "30 Tage kostenloser Support nach Launch",
     ],
     audience:
-      "Du willst, dass Menschen, die in deiner Stadt nach deinem Angebot suchen, dich finden – und zwar auf Seite 1 bei Google. Du willst eine Website, die nicht nur informiert, sondern aktiv Kunden bringt. Dein Unternehmen ist etabliert und braucht einen digitalen Auftritt, der dazu passt. Dann ist Business das richtige Paket.",
+      "Du willst, dass Menschen in deiner Stadt dein Angebot finden – ob Restaurant, Physiotherapie-Praxis oder Handwerksbetrieb. Du brauchst eine Website, die nicht nur informiert, sondern aktiv Kunden bringt.",
     highlighted: true,
   },
   {
@@ -94,7 +94,7 @@ const PACKAGES: Package[] = [
       "60 Tage kostenloser Support nach Launch",
     ],
     audience:
-      "Deine Website ist kein Nebenschauplatz, sondern zentral für dein Geschäft. Du brauchst Funktionen wie Buchung oder Mehrsprachigkeit. Du willst die Inhalte selbst pflegen können, ohne jedes Mal anzurufen. Du willst eine echte Strategie, nicht nur eine schöne Seite. Dann bauen wir Premium.",
+      "Deine Website ist zentrales Werkzeug deines Geschäfts. Du brauchst Buchungssystem, Mehrsprachigkeit oder CMS – ob für ein Hotel, eine Beratungsfirma oder einen größeren Handwerksbetrieb.",
     highlighted: false,
   },
 ];
@@ -221,7 +221,8 @@ export default function LeistungenPage() {
             Leistungen &amp; Preise
           </h1>
           <p className="leistung-reveal mt-6 max-w-[680px] font-serif text-[18px] leading-[1.65] text-muted">
-            Drei Pakete, klare Preise, keine Überraschungen. Wähle das Paket,
+            Drei Pakete, klare Preise – für Restaurants, Dienstleister und
+            Handwerksbetriebe in OWL. Keine Überraschungen. Wähle das Paket,
             das zu deinem Unternehmen passt – oder lass uns im Erstgespräch
             gemeinsam herausfinden, welches es ist.
           </p>

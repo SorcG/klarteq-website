@@ -87,8 +87,8 @@ export default function HeroContent() {
         <SplitTextReveal text="Websites, die für dein Geschäft arbeiten." />
       </h1>
       <p className="hero-paragraph mt-6 max-w-[560px] font-serif text-[18px] leading-[1.65] text-muted">
-        Ich baue schnelle, sichtbare Websites für lokale Unternehmen in
-        Ostwestfalen. Keine Visitenkarten. Werkzeuge.
+        Ich baue schnelle, sichtbare Websites für Restaurants, Dienstleister und
+        Handwerksbetriebe in Ostwestfalen. Keine Visitenkarten. Werkzeuge.
       </p>
       <div className="hero-cta mt-8 flex flex-wrap items-center gap-6">
         <Button variant="primary" size="lg" href="/kontakt">

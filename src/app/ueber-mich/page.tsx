@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     absolute: "Über Luca Sorci · Webentwickler aus Gütersloh | Klarteq",
   },
   description:
-    "Ich bin Luca, Webentwickler aus Gütersloh. Hauptberuflich im E-Commerce, nebenberuflich baue ich Websites für lokale Unternehmen in OWL.",
+    "Ich bin Luca, Webentwickler aus Gütersloh. Hauptberuflich im E-Commerce, nebenberuflich baue ich Websites für Restaurants, Dienstleister und Handwerksbetriebe in OWL.",
 };
 
 const VALUES = [
@@ -45,8 +45,8 @@ export default function UeberMichPage() {
           <Kicker>Dein Entwickler</Kicker>
           <h1 className="max-w-[760px] text-h1 font-sora">Über mich</h1>
           <p className="mt-6 max-w-[680px] font-serif text-[18px] leading-[1.65] text-muted">
-            Warum ein E-Commerce-Entwickler aus Gütersloh Websites für lokale
-            Unternehmen baut.
+            Warum ein E-Commerce-Entwickler aus Gütersloh Websites für
+            Restaurants, Dienstleister und Handwerksbetriebe baut.
           </p>
         </div>
       </section>
@@ -84,12 +84,12 @@ export default function UeberMichPage() {
                 kommen. Das ist Standard in meiner Welt.
               </p>
               <p className="font-serif text-body leading-[1.7] text-dark">
-                Wenn ich dann sehe, wie lokale Unternehmen in Ostwestfalen mit
-                Websites arbeiten, die vor 10 Jahren gebaut wurden und seitdem
-                nicht angefasst wurden, wird mir klar: Hier ist eine riesige
-                Lücke. Zwischen dem, was digital möglich ist, und dem, was
-                lokal ankommt. Genau diese Lücke will ich mit Klarteq
-                schließen.
+                Wenn ich dann sehe, wie Restaurants, Praxen, Kanzleien und
+                Handwerksbetriebe in Ostwestfalen mit Websites arbeiten, die
+                vor 10 Jahren gebaut wurden und seitdem nicht angefasst wurden,
+                wird mir klar: Hier ist eine riesige Lücke. Zwischen dem, was
+                digital möglich ist, und dem, was lokal ankommt. Genau diese
+                Lücke will ich mit Klarteq schließen.
               </p>
             </div>
           </div>
@@ -123,9 +123,10 @@ export default function UeberMichPage() {
               nicht so bleiben.
             </p>
             <p className="font-serif text-body leading-[1.7] text-dark">
-              Lokale Unternehmen sind das Rückgrat von Städten wie Gütersloh,
-              Bielefeld, Rheda-Wiedenbrück. Sie verdienen Websites, die ihrem
-              Angebot gerecht werden. Nicht Websites, die ihnen schaden.
+              Restaurants, Praxen, Kanzleien und Handwerksbetriebe sind das
+              Rückgrat von Städten wie Gütersloh, Bielefeld, Rheda-Wiedenbrück.
+              Sie verdienen Websites, die ihrem Angebot gerecht werden. Nicht
+              Websites, die ihnen schaden.
             </p>
           </div>
         </div>

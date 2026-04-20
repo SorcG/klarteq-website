@@ -60,7 +60,7 @@ const PACKAGES = [
     description:
       "Die perfekte erste Website. Ein Seitenbereich, mobil, bei Google auffindbar, mit Kontaktformular.",
     audience:
-      "Für Handwerker, Selbstständige, kleine Dienstleister, die digital starten wollen.",
+      "Für Dienstleister, Restaurants und Handwerksbetriebe, die digital starten wollen.",
     href: "/leistungen#starter",
     highlighted: false,
   },
@@ -70,7 +70,7 @@ const PACKAGES = [
     description:
       "Mehrere Unterseiten, individuelles Design, Local SEO, Performance-Optimierung.",
     audience:
-      "Für Restaurants, Vereine, etablierte Unternehmen, die Kunden aktiv gewinnen wollen.",
+      "Für Restaurants, Praxen, Kanzleien und etablierte Betriebe, die Kunden aktiv gewinnen wollen.",
     href: "/leistungen#business",
     highlighted: true,
   },
@@ -80,7 +80,7 @@ const PACKAGES = [
     description:
       "Alles aus Business plus Online-Buchung, Mehrsprachigkeit, CMS und erweiterte SEO-Strategie.",
     audience:
-      "Für anspruchsvolle Projekte mit komplexeren Anforderungen.",
+      "Für Unternehmen, deren Website zentrales Werkzeug ihres Geschäfts ist – vom Restaurant bis zur Beratungsfirma.",
     href: "/leistungen#premium",
     highlighted: false,
   },
@@ -224,12 +224,13 @@ export default function HomePage() {
           </ScrollReveal>
           <ScrollReveal delay={160}>
             <p className="mt-6 max-w-[760px] font-serif text-body leading-[1.7] text-muted">
-              Die meisten Websites lokaler Unternehmen haben eines gemeinsam: Sie
-              wurden einmal gebaut und dann vergessen. Das Ergebnis sieht man in
-              den Zahlen. Besucher, die nach drei Sekunden wieder weg sind, weil
-              die Seite zu langsam lädt. Anfragen, die nicht kommen, weil Google
-              die Seite auf Platz 40 versteckt. Kunden, die beim Mitbewerber
-              landen, weil der eine mobile Seite hat, die wirklich funktioniert.
+              Die meisten Websites – ob Restaurant, Praxis oder Handwerksbetrieb
+              – haben eines gemeinsam: Sie wurden einmal gebaut und dann
+              vergessen. Das Ergebnis sieht man in den Zahlen. Besucher, die
+              nach drei Sekunden wieder weg sind, weil die Seite zu langsam
+              lädt. Anfragen, die nicht kommen, weil Google die Seite auf
+              Platz 40 versteckt. Kunden, die beim Mitbewerber landen, weil der
+              eine mobile Seite hat, die wirklich funktioniert.
             </p>
           </ScrollReveal>
           <StaggerReveal className="mt-12 grid gap-6 md:grid-cols-3">
