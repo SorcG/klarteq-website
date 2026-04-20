@@ -3,6 +3,7 @@ import Image from "next/image";
 import Button from "../components/Button";
 import Card from "../components/Card";
 import Kicker from "../components/Kicker";
+import UeberMichReveals from "../components/UeberMichReveals";
 import { personSchema } from "../lib/schema";
 
 export const metadata: Metadata = {
@@ -39,12 +40,15 @@ export default function UeberMichPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
+      <UeberMichReveals />
       {/* 8.2 Hero */}
       <section className="bg-powder">
         <div className="mx-auto max-w-[1200px] px-6 py-24 md:py-28">
-          <Kicker>Dein Entwickler</Kicker>
-          <h1 className="max-w-[760px] text-h1 font-sora">Über mich</h1>
-          <p className="mt-6 max-w-[680px] font-serif text-[18px] leading-[1.65] text-muted">
+          <Kicker className="ueber-reveal">Dein Entwickler</Kicker>
+          <h1 className="ueber-reveal max-w-[760px] text-h1 font-sora">
+            Über mich
+          </h1>
+          <p className="ueber-reveal mt-6 max-w-[680px] font-serif text-[18px] leading-[1.65] text-muted">
             Warum ein E-Commerce-Entwickler aus Gütersloh Websites für
             Restaurants, Dienstleister und Handwerksbetriebe baut.
           </p>
@@ -55,7 +59,7 @@ export default function UeberMichPage() {
       <section className="bg-white">
         <div className="mx-auto max-w-[1200px] px-6 py-20 md:py-28">
           <div className="grid gap-12 md:grid-cols-[45fr_55fr] md:items-start">
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-[480px] overflow-hidden rounded-card md:mx-0">
+            <div className="ueber-reveal-left relative mx-auto aspect-[4/5] w-full max-w-[480px] overflow-hidden rounded-card md:mx-0">
               <Image
                 src="/images/luca2.jpg"
                 alt="Porträt von Luca Sorci, Gründer von Klarteq"
@@ -67,7 +71,7 @@ export default function UeberMichPage() {
             </div>
 
             <div className="space-y-6">
-              <p className="font-serif text-body leading-[1.7] text-dark">
+              <p className="ueber-reveal-right font-serif text-body leading-[1.7] text-dark">
                 Ich bin Luca Sorci. Entwickler aus Gütersloh, mit italienischen
                 Wurzeln und einem Faible für sauber gebaute Dinge.
                 Hauptberuflich arbeite ich im E-Commerce – einer Welt, in der
@@ -76,14 +80,14 @@ export default function UeberMichPage() {
                 schnell: Eine Website ist kein Deko-Objekt. Sie ist ein
                 Werkzeug, das entweder funktioniert oder versagt.
               </p>
-              <p className="font-serif text-body leading-[1.7] text-dark">
+              <p className="ueber-reveal-right font-serif text-body leading-[1.7] text-dark">
                 In meiner Hauptarbeit sehe ich täglich, was Websites leisten
                 müssen, um Umsatz zu machen. Schnelle Ladezeiten. Klare
                 Struktur. Konsequente Optimierung für Suchmaschinen.
                 Mobile-First, weil über 70 % aller Besucher vom Smartphone
                 kommen. Das ist Standard in meiner Welt.
               </p>
-              <p className="font-serif text-body leading-[1.7] text-dark">
+              <p className="ueber-reveal-right font-serif text-body leading-[1.7] text-dark">
                 Wenn ich dann sehe, wie Restaurants, Praxen, Kanzleien und
                 Handwerksbetriebe in Ostwestfalen mit Websites arbeiten, die
                 vor 10 Jahren gebaut wurden und seitdem nicht angefasst wurden,
@@ -99,16 +103,16 @@ export default function UeberMichPage() {
       {/* 8.4 Warum ich das mache (Eisdielen-Story) */}
       <section className="bg-powder">
         <div className="mx-auto max-w-[720px] px-6 py-20 md:py-28">
-          <Kicker>Warum ich das mache</Kicker>
-          <h2 className="text-h2">Warum ich das mache.</h2>
+          <Kicker className="ueber-reveal">Warum ich das mache</Kicker>
+          <h2 className="ueber-reveal text-h2">Warum ich das mache.</h2>
           <div className="mt-8 space-y-6">
-            <p className="font-serif text-body leading-[1.7] text-dark">
+            <p className="ueber-reveal font-serif text-body leading-[1.7] text-dark">
               Es gibt eine Eisdiele in Gütersloh, die ich liebe. Das Eis ist
               handgemacht, die Familie dahinter steht seit Jahren hinter der
               Theke, im Sommer steht man dort eine halbe Stunde an – und das
               gerne.
             </p>
-            <p className="font-serif text-body leading-[1.7] text-dark">
+            <p className="ueber-reveal font-serif text-body leading-[1.7] text-dark">
               Vor ein paar Monaten wollte ich jemandem die Öffnungszeiten
               schicken. Ich habe die Website aufgerufen. Auf dem Handy. Sie
               hat neun Sekunden zum Laden gebraucht. Die Speisekarte war ein
@@ -118,11 +122,11 @@ export default function UeberMichPage() {
               jemand, der ihn online zum ersten Mal findet, würde das nicht
               glauben.
             </p>
-            <p className="font-serif text-body leading-[1.7] text-dark">
+            <p className="ueber-reveal font-serif text-body leading-[1.7] text-dark">
               Das ist kein Einzelfall. Das ist der Standard. Und das muss
               nicht so bleiben.
             </p>
-            <p className="font-serif text-body leading-[1.7] text-dark">
+            <p className="ueber-reveal font-serif text-body leading-[1.7] text-dark">
               Restaurants, Praxen, Kanzleien und Handwerksbetriebe sind das
               Rückgrat von Städten wie Gütersloh, Bielefeld, Rheda-Wiedenbrück.
               Sie verdienen Websites, die ihrem Angebot gerecht werden. Nicht
@@ -135,11 +139,13 @@ export default function UeberMichPage() {
       {/* 8.5 Werte */}
       <section className="bg-white">
         <div className="mx-auto max-w-[1200px] px-6 py-20 md:py-28">
-          <Kicker>Werte</Kicker>
-          <h2 className="max-w-[760px] text-h2">Wie ich arbeite.</h2>
+          <Kicker className="ueber-reveal">Werte</Kicker>
+          <h2 className="ueber-reveal max-w-[760px] text-h2">
+            Wie ich arbeite.
+          </h2>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {VALUES.map((value) => (
-              <Card key={value.title}>
+              <Card key={value.title} className="ueber-reveal">
                 <h3 className="font-sora text-[18px] font-bold leading-[1.3] text-primary">
                   {value.title}
                 </h3>
@@ -155,12 +161,14 @@ export default function UeberMichPage() {
       {/* 8.6 Abschluss-CTA */}
       <section className="bg-dark">
         <div className="mx-auto max-w-[720px] px-6 py-24 text-center">
-          <h2 className="text-h2 text-white">Lust auf ein Gespräch?</h2>
-          <p className="mt-6 font-serif text-body leading-[1.7] text-white/70">
+          <h2 className="ueber-reveal text-h2 text-white">
+            Lust auf ein Gespräch?
+          </h2>
+          <p className="ueber-reveal mt-6 font-serif text-body leading-[1.7] text-white/70">
             Das Erstgespräch ist kostenlos und unverbindlich. 30 bis 60
             Minuten, entweder per Video-Call oder in Person in Gütersloh.
           </p>
-          <div className="mt-8 flex justify-center">
+          <div className="ueber-reveal mt-8 flex justify-center">
             <Button variant="primary" size="lg" href="/kontakt">
               Projekt besprechen
             </Button>
