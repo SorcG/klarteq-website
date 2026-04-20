@@ -446,7 +446,7 @@ export default function HomePage() {
               Antwort.
             </p>
           </ScrollReveal>
-          <ScrollReveal delay={160}>
+          <ScrollReveal delay={160} direction="left">
             <div className="mt-8 flex justify-center">
               <Button variant="primary" size="lg" href="/kontakt">
                 Projekt besprechen

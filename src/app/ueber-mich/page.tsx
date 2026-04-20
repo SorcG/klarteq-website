@@ -168,7 +168,7 @@ export default function UeberMichPage() {
             Das Erstgespräch ist kostenlos und unverbindlich. 30 bis 60
             Minuten, entweder per Video-Call oder in Person in Gütersloh.
           </p>
-          <div className="ueber-reveal mt-8 flex justify-center">
+          <div className="ueber-reveal-left mt-8 flex justify-center">
             <Button variant="primary" size="lg" href="/kontakt">
               Projekt besprechen
             </Button>

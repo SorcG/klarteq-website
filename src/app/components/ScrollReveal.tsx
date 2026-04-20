@@ -6,9 +6,10 @@ interface ScrollRevealProps {
   children: ReactNode;
   delay?: number;
   className?: string;
+  direction?: 'bottom' | 'left';
 }
 
-export default function ScrollReveal({ children, delay = 0, className }: ScrollRevealProps) {
+export default function ScrollReveal({ children, delay = 0, className, direction = 'bottom' }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -21,7 +22,7 @@ export default function ScrollReveal({ children, delay = 0, className }: ScrollR
     const trans = `opacity 550ms cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms, transform 550ms cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms`;
     el.style.transition = trans;
     el.style.opacity = '0';
-    el.style.transform = 'translateY(28px)';
+    el.style.transform = direction === 'left' ? 'translateX(-40px)' : 'translateY(28px)';
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -30,13 +31,13 @@ export default function ScrollReveal({ children, delay = 0, className }: ScrollR
 
         if (isIntersecting) {
           el.style.opacity = '1';
-          el.style.transform = 'translateY(0)';
+          el.style.transform = direction === 'left' ? 'translateX(0)' : 'translateY(0)';
         } else if (aboveViewport) {
           el.style.opacity = '0';
-          el.style.transform = 'translateY(-20px)';
+          el.style.transform = direction === 'left' ? 'translateX(-20px)' : 'translateY(-20px)';
         } else {
           el.style.opacity = '0';
-          el.style.transform = 'translateY(28px)';
+          el.style.transform = direction === 'left' ? 'translateX(-40px)' : 'translateY(28px)';
         }
       },
       { threshold: 0.12 },
