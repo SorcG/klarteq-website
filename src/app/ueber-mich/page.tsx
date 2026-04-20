@@ -3,6 +3,7 @@ import Image from "next/image";
 import Button from "../components/Button";
 import Card from "../components/Card";
 import Kicker from "../components/Kicker";
+import ScrollReveal from "../components/ScrollReveal";
 import UeberMichReveals from "../components/UeberMichReveals";
 import { personSchema } from "../lib/schema";
 
@@ -168,11 +169,13 @@ export default function UeberMichPage() {
             Das Erstgespräch ist kostenlos und unverbindlich. 30 bis 60
             Minuten, entweder per Video-Call oder in Person in Gütersloh.
           </p>
-          <div className="ueber-reveal-left mt-8 flex justify-center">
-            <Button variant="primary" size="lg" href="/kontakt">
-              Projekt besprechen
-            </Button>
-          </div>
+          <ScrollReveal direction="left">
+            <div className="mt-8 flex justify-center">
+              <Button variant="primary" size="lg" href="/kontakt">
+                Projekt besprechen
+              </Button>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </>

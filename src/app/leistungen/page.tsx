@@ -5,6 +5,7 @@ import Card from "../components/Card";
 import Kicker from "../components/Kicker";
 import FAQ from "../components/FAQ";
 import LeistungenReveals from "../components/LeistungenReveals";
+import ScrollReveal from "../components/ScrollReveal";
 import {
   starterServiceSchema,
   businessServiceSchema,
@@ -363,11 +364,13 @@ export default function LeistungenPage() {
             unverbindlich. Schreib mir, und wir finden heraus, ob und wie ich
             dir helfen kann.
           </p>
-          <div className="leistung-reveal-side mt-8 flex justify-center">
-            <Button variant="primary" size="lg" href="/kontakt">
-              Projekt besprechen
-            </Button>
-          </div>
+          <ScrollReveal direction="left">
+            <div className="mt-8 flex justify-center">
+              <Button variant="primary" size="lg" href="/kontakt">
+                Projekt besprechen
+              </Button>
+            </div>
+          </ScrollReveal>
           <p className="mt-4 font-serif text-[14px] text-white/60">
             Oder schreib direkt an{" "}
             <a
