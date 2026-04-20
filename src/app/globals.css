@@ -98,6 +98,33 @@
   }
 }
 
+/* ---------- Wave background ---------- */
+.waves-bg {
+  background: #FAFAF7;
+}
+
+.wave-layer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 200%;
+  will-change: transform;
+}
+.wave-layer svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.wave-layer--back  { height: 40%; opacity: 0.15; animation: waveScroll 40s linear infinite; }
+.wave-layer--mid   { height: 34%; opacity: 0.25; animation: waveScroll 30s linear infinite; animation-delay: -8s; }
+.wave-layer--front { height: 26%; opacity: 0.35; animation: waveScroll 20s linear infinite; animation-delay: -4s; }
+
+@keyframes waveScroll {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -105,4 +132,5 @@
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+  .wave-layer { animation: none !important; }
 }
