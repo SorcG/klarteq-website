@@ -89,12 +89,15 @@ const PACKAGES = [
 
 const REFERENCES = [
   {
-    title: "DSC Gütersloh",
-    meta: "Vereinswebsite · 2025",
+    title: "Der Grieche – Kattenstrother Grill",
+    meta: "Gastronomie · 2025",
     description:
-      "Moderne Vereinsseite mit Mitglieder-Informationen, Terminen und mobiler Optimierung.",
-    href: "#",
-    alt: "Website DSC Gütersloh – Referenzprojekt von Klarteq",
+      "Showcase-Website für einen griechischen Grill-Imbiss in Gütersloh. Dunkles Design, appetitliche Bildwelt, Speisekarte und Reservierung.",
+    href: "https://der-grieche.klarteq.de",
+    alt: "Screenshot der Website Der Grieche – Kattenstrother Grill",
+    image: "/images/der-grieche-screenshot.png",
+    badge: "Konzeptentwurf · Showcase-Projekt",
+    external: true,
   },
   {
     title: "Luca Sorci · Portfolio",
@@ -281,15 +284,32 @@ export default function HomePage() {
           <StaggerReveal className="mt-12 grid gap-6 md:grid-cols-2">
             {REFERENCES.map((ref) => (
               <Card key={ref.title} className="stagger-item">
-                <div
-                  role="img"
-                  aria-label={ref.alt}
-                  className="mb-6 flex aspect-[16/9] w-full items-center justify-center rounded-card border border-border bg-accent-light"
-                >
-                  <span className="font-mono text-[12px] uppercase tracking-wider text-muted">
-                    Screenshot folgt
-                  </span>
-                </div>
+                {ref.image ? (
+                  <div className="relative mb-2 aspect-[16/9] w-full overflow-hidden rounded-card">
+                    <Image
+                      src={ref.image}
+                      alt={ref.alt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                ) : (
+                  <div
+                    role="img"
+                    aria-label={ref.alt}
+                    className="mb-6 flex aspect-[16/9] w-full items-center justify-center rounded-card border border-border bg-accent-light"
+                  >
+                    <span className="font-mono text-[12px] uppercase tracking-wider text-muted">
+                      Screenshot folgt
+                    </span>
+                  </div>
+                )}
+                {ref.badge && (
+                  <p className="mb-4 font-mono text-[11px] text-muted">
+                    {ref.badge}
+                  </p>
+                )}
                 <h3 className="font-sora text-h3 text-primary">{ref.title}</h3>
                 <p className="mt-2 font-mono text-[12px] text-muted">
                   {ref.meta}
@@ -298,7 +318,12 @@ export default function HomePage() {
                   {ref.description}
                 </p>
                 <div className="mt-6">
-                  <Button variant="link" href={ref.href}>
+                  <Button
+                    variant="link"
+                    href={ref.href}
+                    target={ref.external ? "_blank" : undefined}
+                    rel={ref.external ? "noopener noreferrer" : undefined}
+                  >
                     Zur Website →
                   </Button>
                 </div>

@@ -18,6 +18,8 @@ interface ButtonProps {
   type?: "button" | "submit" | "reset";
   className?: string;
   ariaLabel?: string;
+  target?: string;
+  rel?: string;
 }
 
 const BASE = "inline-flex items-center justify-center gap-2 font-sora text-[15px] font-semibold transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-60";
@@ -47,6 +49,8 @@ export default function Button({
   type = "button",
   className = "",
   ariaLabel,
+  target,
+  rel,
 }: ButtonProps) {
   const isLink = variant === "link";
   const classes = [
@@ -69,7 +73,7 @@ export default function Button({
 
   if (href && !loading && !disabled) {
     return (
-      <Link href={href} className={classes} aria-label={ariaLabel}>
+      <Link href={href} className={classes} aria-label={ariaLabel} target={target} rel={rel}>
         {content}
       </Link>
     );
