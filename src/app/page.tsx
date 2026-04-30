@@ -290,7 +290,7 @@ export default function HomePage() {
                       src={ref.image}
                       alt={ref.alt}
                       fill
-                      className="object-cover"
+                      className="object-cover object-top"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
