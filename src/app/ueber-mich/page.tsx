@@ -62,8 +62,8 @@ export default function UeberMichPage() {
           <div className="grid gap-12 md:grid-cols-[45fr_55fr] md:items-start">
             <div className="ueber-reveal-left relative mx-auto aspect-[4/5] w-full max-w-[480px] overflow-hidden rounded-card md:mx-0">
               <Image
-                src="/images/luca2.jpg"
-                alt="Porträt von Luca Sorci, Gründer von Klarteq"
+                src="/images/bewerbung-smile.png"
+                alt="Luca Sorci – Gründer von Klarteq"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 45vw"

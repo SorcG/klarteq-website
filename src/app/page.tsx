@@ -341,8 +341,8 @@ export default function HomePage() {
             <ScrollReveal className="about-image md:col-span-2">
               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-card">
                 <Image
-                  src="/images/luca1.jpg"
-                  alt="Luca Sorci, Webentwickler aus Gütersloh"
+                  src="/images/bewerbung-smile.png"
+                  alt="Luca Sorci – Gründer von Klarteq"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 40vw"
