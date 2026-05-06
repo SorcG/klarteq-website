@@ -100,12 +100,15 @@ const REFERENCES = [
     external: true,
   },
   {
-    title: "Luca Sorci · Portfolio",
-    meta: "Entwickler-Portfolio · 2025",
+    title: "Backstein Kaffeerösterei",
+    meta: "Gastronomie · 2025",
     description:
-      "Zeigt Projekte aus den Bereichen Automatisierung, Bot-Entwicklung und Webentwicklung.",
-    href: "#",
-    alt: "Website Luca Sorci Portfolio – Referenzprojekt von Klarteq",
+      "Showcase-Projekt für eine Premium-Kaffeerösterei aus Gütersloh. Modernes Web-Design mit Next.js, GSAP-Animationen und Smooth Scroll.",
+    href: "https://backstein.klarteq.de",
+    alt: "Screenshot der Website Backstein Kaffeerösterei",
+    image: "/images/backstein-screenshot.png",
+    badge: "Konzeptentwurf · Showcase-Projekt",
+    external: true,
   },
 ];
 
