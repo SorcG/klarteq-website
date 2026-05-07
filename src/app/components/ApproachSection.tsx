@@ -9,7 +9,7 @@ const APPROACH_BLOCKS: { icon: LucideIcon; title: string; text: string }[] = [
   {
     icon: Zap,
     title: 'Tempo, das Agenturen nicht liefern können',
-    text: 'Ich arbeite mit modernen, KI-gestützten Entwicklungstools. Das heißt: Was in einer klassischen Agentur vier Wochen dauert, baue ich in vier Tagen. Gleiche Qualität, andere Geschwindigkeit. Das spart dir Zeit, und weil meine Prozesse schlanker sind, auch Geld.',
+    text: 'Ich arbeite mit modernen, KI-gestützten Entwicklungstools. Das heißt: Was in einer klassischen Agentur vier Wochen dauert, baue ich in vier Tagen. Gleiche Qualität, andere Geschwindigkeit. Das spart dir Zeit und weil meine Prozesse schlanker sind, auch Geld.',
   },
   {
     icon: Gauge,
@@ -92,7 +92,7 @@ export default function ApproachSection() {
           <div className="md:sticky md:top-[120px] md:self-start">
             <Kicker>Mein Ansatz</Kicker>
             <h2 className="text-h2">
-              Wie ich arbeite – und warum das anders ist.
+              Wie ich arbeite und warum das anders ist.
             </h2>
             <p className="mt-6 font-serif text-body leading-[1.7] text-muted">
               Ich komme nicht aus der klassischen Webdesign-Welt. Hauptberuflich
