@@ -92,7 +92,7 @@ export default function UeberMichPage() {
                 Wenn ich dann sehe, wie Restaurants, Praxen, Kanzleien und
                 Handwerksbetriebe in Ostwestfalen mit Websites arbeiten, die
                 vor 10 Jahren gebaut wurden und seitdem nicht angefasst wurden,
-                wird mir klar: Hier ist eine riesige Lücke. Zwischen dem, was
+                wird mir klar: Hier ist eine riesige Lücke zwischen dem, was
                 digital möglich ist, und dem, was lokal ankommt. Genau diese
                 Lücke will ich mit Klarteq schließen.
               </p>
