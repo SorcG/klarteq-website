@@ -72,7 +72,7 @@ export default function UeberMichPage() {
             </div>
 
             <div className="space-y-6">
-              <p className="ueber-reveal-right font-serif text-body leading-[1.7] text-dark">
+              <p className="ueber-reveal-right font-serif text-body leading-[1.7] text-muted">
                 Ich bin Luca Sorci. Entwickler aus Gütersloh, mit italienischen
                 Wurzeln und einem Faible für sauber gebaute Dinge.
                 Hauptberuflich arbeite ich im E-Commerce – einer Welt, in der
@@ -81,14 +81,14 @@ export default function UeberMichPage() {
                 schnell: Eine Website ist kein Deko-Objekt. Sie ist ein
                 Werkzeug, das entweder funktioniert oder versagt.
               </p>
-              <p className="ueber-reveal-right font-serif text-body leading-[1.7] text-dark">
+              <p className="ueber-reveal-right font-serif text-body leading-[1.7] text-muted">
                 In meiner Hauptarbeit sehe ich täglich, was Websites leisten
                 müssen, um Umsatz zu machen. Schnelle Ladezeiten. Klare
                 Struktur. Konsequente Optimierung für Suchmaschinen.
                 Mobile-First, weil über 70 % aller Besucher vom Smartphone
                 kommen. Das ist Standard in meiner Welt.
               </p>
-              <p className="ueber-reveal-right font-serif text-body leading-[1.7] text-dark">
+              <p className="ueber-reveal-right font-serif text-body leading-[1.7] text-muted">
                 Wenn ich dann sehe, wie Restaurants, Praxen, Kanzleien und
                 Handwerksbetriebe in Ostwestfalen mit Websites arbeiten, die
                 vor 10 Jahren gebaut wurden und seitdem nicht angefasst wurden,
@@ -107,13 +107,13 @@ export default function UeberMichPage() {
           <Kicker className="ueber-reveal">Warum ich das mache</Kicker>
           <h2 className="ueber-reveal text-h2">Warum ich das mache.</h2>
           <div className="mt-8 space-y-6">
-            <p className="ueber-reveal font-serif text-body leading-[1.7] text-dark">
+            <p className="ueber-reveal font-serif text-body leading-[1.7] text-muted">
               Es gibt eine Eisdiele in Gütersloh, die ich liebe. Das Eis ist
               handgemacht, die Familie dahinter steht seit Jahren hinter der
               Theke, im Sommer steht man dort eine halbe Stunde an – und das
               gerne.
             </p>
-            <p className="ueber-reveal font-serif text-body leading-[1.7] text-dark">
+            <p className="ueber-reveal font-serif text-body leading-[1.7] text-muted">
               Vor ein paar Monaten wollte ich jemandem die Öffnungszeiten
               schicken. Ich habe die Website aufgerufen. Auf dem Handy. Sie
               hat neun Sekunden zum Laden gebraucht. Die Speisekarte war ein
@@ -123,11 +123,11 @@ export default function UeberMichPage() {
               jemand, der ihn online zum ersten Mal findet, würde das nicht
               glauben.
             </p>
-            <p className="ueber-reveal font-serif text-body leading-[1.7] text-dark">
+            <p className="ueber-reveal font-serif text-body leading-[1.7] text-muted">
               Das ist kein Einzelfall. Das ist der Standard. Und das muss
               nicht so bleiben.
             </p>
-            <p className="ueber-reveal font-serif text-body leading-[1.7] text-dark">
+            <p className="ueber-reveal font-serif text-body leading-[1.7] text-muted">
               Restaurants, Praxen, Kanzleien und Handwerksbetriebe sind das
               Rückgrat von Städten wie Gütersloh, Bielefeld, Rheda-Wiedenbrück.
               Sie verdienen Websites, die ihrem Angebot gerecht werden. Nicht
