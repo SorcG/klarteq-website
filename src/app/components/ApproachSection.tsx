@@ -19,7 +19,7 @@ const APPROACH_BLOCKS: { icon: LucideIcon; title: string; text: string }[] = [
   {
     icon: Code2,
     title: 'Keine Templates',
-    text: 'Ich arbeite nicht mit Baukästen. Jede Seite wird als Code für dein Unternehmen geschrieben. Das klingt nach Mehraufwand – ist aber genau das, was deine Seite schneller, sichtbarer und langfristig wartbarer macht.',
+    text: 'Ich arbeite nicht mit Baukästen. Jede Seite wird als Code für dein Unternehmen geschrieben. Das klingt nach Mehraufwand ist aber genau das, was deine Seite schneller, sichtbarer und langfristig leicht modifizierbar macht.',
   },
 ];
 
