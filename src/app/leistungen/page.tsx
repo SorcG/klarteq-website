@@ -314,7 +314,7 @@ export default function LeistungenPage() {
           </h2>
           <p className="leistung-reveal mt-6 max-w-[760px] font-serif text-body leading-[1.7] text-muted">
             Jedes Projekt folgt einem klaren Ablauf. Damit du weißt, was wann
-            passiert, und dich darauf verlassen kannst.
+            passiert und dich darauf verlassen kannst.
           </p>
 
           <ol className="relative mx-auto mt-12 max-w-[760px] border-l border-border pl-8">
