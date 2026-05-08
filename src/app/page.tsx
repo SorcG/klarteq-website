@@ -214,13 +214,13 @@ export default function HomePage() {
           </ScrollReveal>
           <ScrollReveal delay={80}>
             <h2 className="max-w-[760px] text-h2">
-              Website-Pakete für Unternehmen in Gütersloh und OWL.
+              Webseiten für Unternehmen in Gütersloh und OWL.
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={160}>
             <p className="mt-6 max-w-[760px] font-serif text-body leading-[1.7] text-muted">
               Drei Pakete, klare Preise, keine Überraschungen. Wähle das Paket,
-              das zu deinem Unternehmen passt – oder lass uns im Erstgespräch
+              das zu deinem Unternehmen passt oder lass uns im Erstgespräch
               gemeinsam herausfinden, welches es ist.
             </p>
           </ScrollReveal>
