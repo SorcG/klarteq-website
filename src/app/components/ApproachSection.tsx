@@ -14,7 +14,7 @@ const APPROACH_BLOCKS: { icon: LucideIcon; title: string; text: string }[] = [
   {
     icon: Gauge,
     title: 'Performance statt Dekoration',
-    text: 'Ich baue keine Seiten, die nur schön aussehen. Ich baue Seiten, die unter 2 Sekunden laden, die Google versteht, und die auf jedem Handy funktionieren. Lighthouse-Score 90+ ist bei mir Standard, nicht Upgrade.',
+    text: 'Ich baue keine Seiten, die nur schön aussehen. Ich baue Seiten, die unter 2 Sekunden laden, die Google versteht, und die auf jedem Handy funktionieren.',
   },
   {
     icon: Code2,
