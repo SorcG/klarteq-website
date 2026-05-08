@@ -165,11 +165,6 @@ const FAQ_ITEMS = [
     answer:
       "Alles. Code, Design, Inhalte, Domain. Du bist nicht an mich gebunden. Auch das Hosting ist frei wählbar – du kannst das Wartungspaket buchen, selbst hosten oder zu einem anderen Dienstleister gehen. Deine Website ist dein Eigentum.",
   },
-  {
-    question: "Wie viele Pioneer-Plätze sind noch frei?",
-    answer:
-      "Die Einführungspreise gelten für die ersten zwei Klarteq-Projekte. Nach Abschluss dieser Projekte steigen die Preise auf das reguläre Niveau. Frag im Erstgespräch nach, wie der aktuelle Stand ist.",
-  },
 ];
 
 function Checklist({ items }: { items: string[] }) {
