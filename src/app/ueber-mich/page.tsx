@@ -114,7 +114,7 @@ export default function UeberMichPage() {
               gerne.
             </p>
             <p className="ueber-reveal font-serif text-body leading-[1.7] text-muted">
-              Vor ein paar Monaten wollte ich jemandem die Öffnungszeiten
+              Vor ein paar Monaten wollte ich jemandem die Speisekarte
               schicken. Ich habe die Website aufgerufen. Auf dem Handy. Sie
               hat neun Sekunden zum Laden gebraucht. Die Speisekarte war ein
               PDF, das auf dem Smartphone nicht lesbar war. Die
