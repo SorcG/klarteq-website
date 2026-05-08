@@ -279,7 +279,7 @@ export default function HomePage() {
           </ScrollReveal>
           <ScrollReveal delay={160}>
             <p className="mt-6 max-w-[760px] font-serif text-body leading-[1.7] text-muted">
-              Klarteq ist neu – aber das Handwerk nicht. Hier sind Projekte, die
+              Klarteq steht für Qualität statt Quantität. Hier sind Projekte, die
               ich bereits umgesetzt habe. Weitere Referenzen folgen, sobald die
               ersten Klarteq-Kunden live sind.
             </p>
